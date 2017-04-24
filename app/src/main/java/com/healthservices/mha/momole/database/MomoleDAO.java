@@ -87,15 +87,15 @@ public class MomoleDAO {
         database.execSQL(CREATE_TBL_N);
     }
 
-    public void onUpgrade(SQLiteDatabase database, int oldVersion int newVersion){
+    public void onUpgrade(SQLiteDatabase database, int oldVersion, int newVersion){
 
     }
 
-    public Momole getMomole(long id){
+    /*public Momole getMomole(long id){
         open();
         Cursor cursor = database.query(TBL_LM, //TBL
-                ,null, //null returns all columns /fields
-                TBL_LM_ID, + "=?", // Selection (WHERE [field]=?)
+                null, //null returns all columns /fields
+                TBL_LM_ID + "=?", // Selection (WHERE [field]=?)
                 new String[]{String.valueOf(id)},
                 null,
                 null,
@@ -107,14 +107,14 @@ public class MomoleDAO {
         cursor.close();
         close();
         return null;
+    }*/
+
+    /*private Momole readFromCursor(Cursor cursor) {
     }
 
-    private Momole readFromCursor(Cursor cursor) {
-    }
-
-    public List<Momole> getAllMomoleAfter (long timestamp){
+    /*public List<Momole> getAllMomoleAfter (long timestamp){
         open();
         Cursor cursor = database.query(TBL_LM, //table
         new String []// )
-    }
+    }*/
 }
