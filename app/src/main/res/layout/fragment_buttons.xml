@@ -9,11 +9,11 @@
 
     <ImageButton
         android:id="@+id/imageButton9"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="104dp"
+        android:layout_height="61dp"
         app:srcCompat="@mipmap/images"
-        tools:layout_editor_absoluteX="48dp"
-        tools:layout_editor_absoluteY="483dp" />
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="434dp" />
 
     <ImageButton
         android:id="@+id/imageButton10"
