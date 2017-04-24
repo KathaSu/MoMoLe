@@ -268,4 +268,71 @@ public class MomoleDAO {
 
         return momole;
     }
+
+    public Momole getMomole(long id){
+        open();
+        Cursor cursor = db.query(TBL_N, //TBL
+                null, //null returns all columns /fields
+                TBL_N_ID + "=?", // Selection (WHERE [field]=?)
+                new String[]{String.valueOf(id)},
+                null,
+                null,
+                null,
+                null);
+        if (cursor.moveToFirst()){
+            return readFromCursor(cursor);
+        }
+        cursor.close();
+        close();
+        return null;
+    }
+
+    public List<Momole> getAllMomoleAfter (long timestamp){
+        open();
+        Cursor cursor = db.query(TBL_N,
+                new String [] {TBL_N_ID, TBL_N_TSTMP, TBL_N_DESCRIPTION},
+                TBL_N_TSTMP + ">=" + timestamp,
+                null,
+                null,
+                null,
+                null,
+                TBL_N_TSTMP + " ASC");
+        List<Momole> momole = new LinkedList<>();
+        if (cursor.moveToFirst()){
+            while (!cursor.isAfterLast()){
+                momole.add (readFromCursor (cursor));
+                cursor.moveToNext();
+            }
+        }
+        cursor.close();
+        close();
+        return momole;
+    }
+    // 103 bis 158 nicht umgesetzt
+
+    private ContentValues prepareValues (Momole momole) {
+        ContentValues contentValues = new ContentValues();
+
+        if (momole.getId() > 0)
+            contentValues.put(TBL_N_ID, momole.getId());
+        contentValues.put(TBL_N_TSTMP, momole.getUhrzeit());
+        contentValues.put(TBL_N_DESCRIPTION, momole.getBezeichnung());
+
+        return contentValues;
+    }
+
+    private Momole readFromCursor (Cursor cursor) {
+        Momole momole = new Momole();
+
+        int index = cursor.getColumnIndex(TBL_N_ID);
+        momole.setId(cursor.getLong(index));
+
+        index = cursor.getColumnIndex(TBL_N_TSTMP);
+        momole.setUhrzeit(cursor.getString(index)); // get.Long weisst error auf
+
+        index = cursor.getColumnIndex(TBL_N_DESCRIPTION);
+        momole.setBezeichnung(cursor.getString(index));
+
+        return momole;
+    }
 }
