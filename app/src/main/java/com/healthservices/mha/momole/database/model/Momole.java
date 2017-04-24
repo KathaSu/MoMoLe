@@ -19,7 +19,7 @@ public class Momole {
     }
 
     public long getUhrzeit() { return tstmp;}
-    public void setUhrzeit(String tstmp) {this.tstmp = tstmp;}
+    public void setUhrzeit(long tstmp) {this.tstmp = tstmp;}
 
     public String getBezeichnung() {
         return des;
