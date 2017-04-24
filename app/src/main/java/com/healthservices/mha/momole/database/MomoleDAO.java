@@ -162,7 +162,7 @@ public class MomoleDAO {
         momole.setId(cursor.getLong(index));
 
         index = cursor.getColumnIndex(TBL_LM_TSTMP);
-        momole.setUhrzeit(cursor.getString(index)); // get.Long weisst error auf
+        momole.setUhrzeit(cursor.getLong(index));
 
         index = cursor.getColumnIndex(TBL_LM_DESCRIPTION);
         momole.setBezeichnung(cursor.getString(index));
