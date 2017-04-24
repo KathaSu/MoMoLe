@@ -16,6 +16,7 @@ import com.healthservices.mha.momole.database.model.Momole;
  */
 
 public class MomoleDAO {
+
     public static final String TBL_LM = "lebensmittel";
     public static final String TBL_LM_ID = "id";
     public static final String TBL_LM_TSTMP = "tstmp";
@@ -24,8 +25,6 @@ public class MomoleDAO {
     public static final String TBL_LM_GLUTEN = "gluten";
     public static final String TBL_LM_FRUCTOSE = "fructose";
     public static final String TBL_LM_HISTAMIN = "histamin";
-
-
 
     public static final String TBL_B = "beschwerden";
     public static final String TBL_B_ID = "id";
