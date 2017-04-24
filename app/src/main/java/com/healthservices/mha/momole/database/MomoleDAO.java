@@ -101,7 +101,7 @@ public class MomoleDAO {
 
     public Momole getMomole(long id){
         open();
-        Cursor cursor = db.query(TBL_LM, //TBL
+        Cursor cursor = db.query(TBL_LM,  //TBL
                 null, //null returns all columns /fields
                 TBL_LM_ID + "=?", // Selection (WHERE [field]=?)
                 new String[]{String.valueOf(id)},
