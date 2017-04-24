@@ -20,7 +20,11 @@ public class MomoleDAO {
     public static final String TBL_LM_ID = "id";
     public static final String TBL_LM_TSTMP = "tstmp";
     public static final String TBL_LM_DESCRIPTION = "des";
-    public static final String TBL_LM_CATEGORY = "category";
+    public static final String TBL_LM_DIGESTIVPBL = "digestivpbl";
+    public static final String TBL_LM_HEADACHE = "headache";
+    public static final String TBL_LM_SKINPBL = "skinpbl";
+    public static final String TBL_LM_RESPIDISTRESS = "respidistress";
+    public static final String TBL_LM_FEVER = "fever";
 
     public static final String TBL_B = "beschwerden";
     public static final String TBL_B_ID = "id";
@@ -37,7 +41,11 @@ public class MomoleDAO {
             + TBL_LM_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, "
             + TBL_LM_TSTMP + " INTEGER NOT NULL, "
             + TBL_LM_DESCRIPTION + " TEXT, "
-            + TBL_LM_CATEGORY + " TEXT";
+            + TBL_LM_DIGESTIVPBL + " TEXT, "
+            + TBL_LM_HEADACHE + " TEXT, "
+            + TBL_LM_SKINPBL + " TEXT, "
+            + TBL_LM_RESPIDISTRESS + " TEXT, "
+            + TBL_LM_FEVER + " TEXT";
 
     public static final String CREATE_TBL_B = "CREATE TBL " + TBL_B + "("
             + TBL_B_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, "
