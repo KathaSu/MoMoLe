@@ -10,6 +10,12 @@ import android.widget.Toast;
 
 import org.w3c.dom.Text;
 
+<<<<<<< HEAD
+=======
+import com.healthservices.mha.momole.database.MomoleDAO;
+import com.healthservices.mha.momole.database.model.Momole;
+
+>>>>>>> master
 public class content_lebensmittel_formular extends Fragment {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
