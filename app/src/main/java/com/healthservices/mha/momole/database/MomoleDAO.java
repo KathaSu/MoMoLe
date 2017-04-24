@@ -181,4 +181,91 @@ public class MomoleDAO {
 
         return momole;
     }
+
+    public Momole getMomole(long id){
+        open();
+        Cursor cursor = db.query(TBL_B, //TBL
+                null, //null returns all columns /fields
+                TBL_B_ID + "=?", // Selection (WHERE [field]=?)
+                new String[]{String.valueOf(id)},
+                null,
+                null,
+                null,
+                null);
+        if (cursor.moveToFirst()){
+            return readFromCursor(cursor);
+        }
+        cursor.close();
+        close();
+        return null;
+    }
+
+    public List<Momole> getAllMomoleAfter (long timestamp){
+        open();
+        Cursor cursor = db.query(TBL_B,
+                new String [] {TBL_B_ID, TBL_B_TSTMP, TBL_B_DESCRIPTION, TBL_B_DIGESTIVPBL, TBL_B_HEADACHE, TBL_B_SKINPBL, TBL_B_RESPIDISTRESS, TBL_B_FEVER},
+                TBL_B_TSTMP + ">=" + timestamp,
+                null,
+                null,
+                null,
+                null,
+                TBL_B_TSTMP + " ASC");
+        List<Momole> momole = new LinkedList<>();
+        if (cursor.moveToFirst()){
+            while (!cursor.isAfterLast()){
+                momole.add (readFromCursor (cursor));
+                cursor.moveToNext();
+            }
+        }
+        cursor.close();
+        close();
+        return momole;
+    }
+    // 103 bis 158 nicht umgesetzt
+
+    private ContentValues prepareValues (Momole momole) {
+        ContentValues contentValues = new ContentValues();
+
+        if (momole.getId() > 0)
+            contentValues.put(TBL_B_ID, momole.getId());
+        contentValues.put(TBL_B_TSTMP, momole.getUhrzeit());
+        contentValues.put(TBL_B_DESCRIPTION, momole.getBezeichnung());
+        contentValues.put(TBL_B_DIGESTIVPBL, momole.getKategorie());
+        contentValues.put(TBL_B_HEADACHE, momole.getKategorie());
+        contentValues.put(TBL_B_SKINPBL, momole.getKategorie());
+        contentValues.put(TBL_B_RESPIDISTRESS, momole.getKategorie());
+        contentValues.put(TBL_B_FEVER, momole.getKategorie());
+
+        return contentValues;
+    }
+
+    private Momole readFromCursor (Cursor cursor) {
+        Momole momole = new Momole();
+
+        int index = cursor.getColumnIndex(TBL_B_ID);
+        momole.setId(cursor.getLong(index));
+
+        index = cursor.getColumnIndex(TBL_B_TSTMP);
+        momole.setUhrzeit(cursor.getString(index)); // get.Long weisst error auf
+
+        index = cursor.getColumnIndex(TBL_B_DESCRIPTION);
+        momole.setBezeichnung(cursor.getString(index));
+
+        index = cursor.getColumnIndex(TBL_B_DIGESTIVPBL);
+        momole.setKategorie(cursor.getString(index));
+
+        index = cursor.getColumnIndex(TBL_B_HEADACHE);
+        momole.setKategorie(cursor.getString(index));
+
+        index = cursor.getColumnIndex(TBL_B_SKINPBL);
+        momole.setKategorie(cursor.getString(index));
+
+        index = cursor.getColumnIndex(TBL_B_RESPIDISTRESS);
+        momole.setKategorie(cursor.getString(index));
+
+        index = cursor.getColumnIndex(TBL_B_FEVER);
+        momole.setKategorie(cursor.getString(index));
+
+        return momole;
+    }
 }
