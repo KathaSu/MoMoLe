@@ -101,7 +101,7 @@ public class MomoleDAO {
 
     public Momole getMomole(long id){
         open();
-        Cursor cursor = database.query(TBL_LM, //TBL
+        Cursor cursor = db.query(TBL_LM, //TBL
                 null, //null returns all columns /fields
                 TBL_LM_ID + "=?", // Selection (WHERE [field]=?)
                 new String[]{String.valueOf(id)},
@@ -115,14 +115,70 @@ public class MomoleDAO {
         cursor.close();
         close();
         return null;
-    }*/
-
-    /*private Momole readFromCursor(Cursor cursor) {
     }
 
-    /*public List<Momole> getAllMomoleAfter (long timestamp){
+    public List<Momole> getAllMomoleAfter (long timestamp){
         open();
-        Cursor cursor = database.query(TBL_LM, //table
-        new String []// )
-    }*/
+        Cursor cursor = db.query(TBL_LM,
+                new String [] {TBL_LM_ID, TBL_LM_TSTMP, TBL_LM_DESCRIPTION, TBL_LM_LACTOSE, TBL_LM_GLUTEN, TBL_LM_FRUCTOSE, TBL_LM_HISTAMIN},
+                TBL_LM_TSTMP + ">=" + timestamp,
+                null,
+                null,
+                null,
+                null,
+                TBL_LM_TSTMP + " ASC");
+        List<Momole> momole = new LinkedList<>();
+        if (cursor.moveToFirst()){
+            while (!cursor.isAfterLast()){
+                momole.add (readFromCursor (cursor));
+                cursor.moveToNext();
+            }
+        }
+        cursor.close();
+        close();
+        return momole;
+    }
+    // 103 bis 158 nicht umgesetzt
+
+    private ContentValues prepareValues (Momole momole) {
+        ContentValues contentValues = new ContentValues();
+
+        if (momole.getId() > 0)
+            contentValues.put(TBL_LM_ID, momole.getId());
+        contentValues.put(TBL_LM_TSTMP; momole.getUhrzeit());
+        contentValues.put(TBL_LM_DESCRIPTION, momole.getBezeichnung());
+        contentValues.put(TBL_LM_LACTOSE, momole.getKategorie());
+        contentValues.put(TBL_LM_GLUTEN, momole.getKategorie());
+        contentValues.put(TBL_LM_HISTAMIN, momole.getKategorie());
+        contentValues.put(TBL_LM_FRUCTOSE, momole.getKategorie());
+
+        return contentValues;
+    }
+
+    private Momole readFromCursor (Cursor cursor) {
+        Momole momole = new Momole();
+
+        int index = cursor.getColumnIndex(TBL_LM_ID);
+        momole.setId(cursor.getLong(index));
+
+        index = cursor.getColumnIndex(TBL_LM_TSTMP);
+        momole.setUhrzeit(cursor.getLong(index));
+
+        index = cursor.getColumnIndex(TBL_LM_DESCRIPTION);
+        momole.setBezeichnung(cursor.getString(index));
+
+        index = cursor.getColumnIndex(TBL_LM_LACTOSE);
+        momole.setKategorie(cursor.getString(index));
+
+        index = cursor.getColumnIndex(TBL_LM_GLUTEN);
+        momole.setKategorie(cursor.getString(index));
+
+        index = cursor.getColumnIndex(TBL_LM_HISTAMIN);
+        momole.setKategorie(cursor.getString(index));
+
+        index = cursor.getColumnIndex(TBL_LM_FRUCTOSE);
+        momole.setKategorie(cursor.getString(index));
+
+        return momole;
+    }
 }
