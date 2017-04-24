@@ -68,7 +68,7 @@ public class MomoleDAO {
 
     private static MomoleDAO instance;
     private DatabaseHelper dbHelper;
-    private SQLiteDatabase database;
+    private SQLiteDatabase db;
 
     public static MomoleDAO getInstance(Context context){
         if (instance == null){
@@ -82,20 +82,20 @@ public class MomoleDAO {
     }
 
     public void open() throws SQLException{
-        database = dbHelper.getWritableDatabase();
+        db = dbHelper.getWritableDatabase();
     }
 
     public void close(){
         dbHelper.close();
     }
 
-    public void onCreate(SQLiteDatabase database){
-        database.execSQL(CREATE_TBL_LM);
-        database.execSQL(CREATE_TBL_B);
-        database.execSQL(CREATE_TBL_N);
+    public void onCreate(SQLiteDatabase db){
+        db.execSQL(CREATE_TBL_LM);
+        db.execSQL(CREATE_TBL_B);
+        db.execSQL(CREATE_TBL_N);
     }
 
-    public void onUpgrade(SQLiteDatabase database, int oldVersion, int newVersion){
+    public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion){
 
     }
 
