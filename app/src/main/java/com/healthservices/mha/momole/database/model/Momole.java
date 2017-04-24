@@ -7,7 +7,7 @@ package com.healthservices.mha.momole.database.model;
 
 public class Momole {
     private long id = -1;
-    private String tstmp;
+    private long tstmp;
     private String des;
     private String category;
 
@@ -18,7 +18,7 @@ public class Momole {
         this.id = id;
     }
 
-    public String getUhrzeit() { return tstmp;}
+    public long getUhrzeit() { return tstmp;}
     public void setUhrzeit(String tstmp) {this.tstmp = tstmp;}
 
     public String getBezeichnung() {
