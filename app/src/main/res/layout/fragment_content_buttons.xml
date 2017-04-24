@@ -16,21 +16,25 @@
 
         <ImageButton
             android:id="@+id/imageButton"
+            style="@android:style/Widget.DeviceDefault.ImageButton"
             android:layout_width="125dp"
             android:layout_height="80dp"
             android:layout_weight="0.27"
+            android:background="@android:color/white"
             app:srcCompat="@mipmap/images" />
 
         <ImageButton
             android:id="@+id/imageButton2"
             android:layout_width="125dp"
             android:layout_height="80dp"
+            android:background="@android:color/white"
             app:srcCompat="@mipmap/beschwerden" />
 
         <ImageButton
             android:id="@+id/imageButton3"
             android:layout_width="125dp"
             android:layout_height="80dp"
+            android:background="@android:color/white"
             app:srcCompat="@mipmap/notizen" />
     </LinearLayout>
 

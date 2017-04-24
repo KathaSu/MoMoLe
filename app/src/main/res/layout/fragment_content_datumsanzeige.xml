@@ -32,10 +32,12 @@
                 android:id="@+id/datumsauswahl_vor"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-
                 app:srcCompat="@android:drawable/ic_media_next" />
     </LinearLayout>
 
-
+    <include layout="@layout/fragment_content_buttons"
+        android:layout_marginTop="56dp"
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"/>
 
 </FrameLayout>
