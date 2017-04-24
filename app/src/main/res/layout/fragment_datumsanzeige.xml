@@ -17,7 +17,7 @@
         android:layout_height="wrap_content"
         android:text="datumsauswahl"
         android:textSize="18sp"
-        tools:layout_editor_absoluteY="90dp"
+        tools:layout_editor_absoluteY="16dp"
         tools:layout_editor_absoluteX="128dp" />
 
     <ImageButton
@@ -25,8 +25,8 @@
         android:layout_width="28dp"
         android:layout_height="24dp"
         app:srcCompat="@android:drawable/ic_media_next"
-        tools:layout_editor_absoluteX="264dp"
-        tools:layout_editor_absoluteY="88dp" />
+        tools:layout_editor_absoluteX="256dp"
+        tools:layout_editor_absoluteY="16dp" />
 
     <ImageButton
         android:id="@+id/imageButton2"
@@ -34,5 +34,5 @@
         android:layout_height="23dp"
         app:srcCompat="@android:drawable/ic_media_previous"
         tools:layout_editor_absoluteX="97dp"
-        tools:layout_editor_absoluteY="89dp" />
+        tools:layout_editor_absoluteY="16dp" />
 </android.support.constraint.ConstraintLayout>
