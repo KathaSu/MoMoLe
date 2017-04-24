@@ -145,7 +145,7 @@ public class MomoleDAO {
 
         if (momole.getId() > 0)
             contentValues.put(TBL_LM_ID, momole.getId());
-        contentValues.put(TBL_LM_TSTMP; momole.getUhrzeit());
+        contentValues.put(TBL_LM_TSTMP, momole.getUhrzeit());
         contentValues.put(TBL_LM_DESCRIPTION, momole.getBezeichnung());
         contentValues.put(TBL_LM_LACTOSE, momole.getKategorie());
         contentValues.put(TBL_LM_GLUTEN, momole.getKategorie());
