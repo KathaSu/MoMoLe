@@ -71,7 +71,7 @@ public class MomoleDAO {
     private SQLiteDatabase db;
 
     public static MomoleDAO getInstance(Context context){
-        if (instance == null){
+        if (instance == null) {
             instance = new MomoleDAO(context);
         }
         return instance;
@@ -81,7 +81,7 @@ public class MomoleDAO {
         dbHelper = DatabaseHelper.getInstance(context);
     }
 
-    public void open() throws SQLException{
+    public void open() throws SQLException {
         db = dbHelper.getWritableDatabase();
     }
 
@@ -99,7 +99,7 @@ public class MomoleDAO {
 
     }
 
-    /*public Momole getMomole(long id){
+    public Momole getMomole(long id){
         open();
         Cursor cursor = database.query(TBL_LM, //TBL
                 null, //null returns all columns /fields
