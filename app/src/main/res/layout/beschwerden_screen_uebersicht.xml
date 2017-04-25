@@ -22,13 +22,13 @@
         android:layout_toRightOf="@+id/imageView5"
         android:ems="6"
         android:inputType="textPersonName"
-        android:text="Beschwerde1" />
+        android:text="@string/hello_blank_fragment" />
 
     <Button
         android:id="@+id/button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Ändern"
+        android:text="@string/action_settings"
         android:layout_alignBottom="@+id/editText"
         android:layout_toRightOf="@+id/editText"
         android:layout_toEndOf="@+id/editText" />
@@ -37,7 +37,7 @@
         android:id="@+id/button2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Löschen"
+        android:text="@string/action_settings"
         android:layout_alignBottom="@+id/editText"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true" />
@@ -61,13 +61,13 @@
         android:layout_toRightOf="@+id/imageView6"
         android:ems="6"
         android:inputType="textPersonName"
-        android:text="Beschwerde2" />
+        android:text="@string/hello_blank_fragment" />
 
     <Button
         android:id="@+id/button3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Ändern"
+        android:text="@string/action_settings"
         android:layout_alignTop="@+id/editText2"
         android:layout_toRightOf="@+id/editText2"
         android:layout_toEndOf="@+id/editText2" />
@@ -76,7 +76,7 @@
         android:id="@+id/button4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Löschen"
+        android:text="@string/action_settings"
         android:layout_alignBaseline="@+id/button3"
         android:layout_alignBottom="@+id/button3"
         android:layout_alignParentRight="true"
@@ -89,7 +89,7 @@
         android:layout_marginBottom="54dp"
         android:layout_marginEnd="20dp"
         android:layout_marginRight="20dp"
-        android:text="+"
+        android:text="@string/navigation_drawer_open"
         android:layout_alignParentBottom="true"
         android:layout_alignRight="@+id/button4"
         android:layout_alignEnd="@+id/button4" />
