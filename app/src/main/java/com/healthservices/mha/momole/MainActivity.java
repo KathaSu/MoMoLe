@@ -25,8 +25,7 @@ import android.support.annotation.RequiresApi;
 import android.widget.Toast;
 
 
-public class MainActivity extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener {
+public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
     private Fragment currentFragment;
 
     @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN)
