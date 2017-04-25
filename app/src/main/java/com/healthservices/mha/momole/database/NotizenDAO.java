@@ -5,4 +5,9 @@ package com.healthservices.mha.momole.database;
  */
 
 public class NotizenDAO {
+
+    public static final String TBL_N = "notizen";
+    public static final String TBL_N_ID = "id";
+    public static final String TBL_N_TSTMP= "tstmp";
+    public static final String TBL_N_DESCRITION = "des";
 }

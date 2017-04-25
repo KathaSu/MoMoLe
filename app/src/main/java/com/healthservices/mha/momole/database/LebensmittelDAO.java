@@ -17,6 +17,17 @@ import java.util.List;
 
 public class LebensmittelDAO {
 
+    public static final String TBL_LM = "lebensmittel";
+    public static final String TBL_LM_ID = "id";
+    public static final String TBL_LM_TSTMP= "tstmp";
+    public static final String TBL_LM_DESCRITION = "des";
+    public static final String TBL_LM_LACTOSE = "lactose";
+    public static final String TBL_LM_GLUTEN = "gluten";
+    public static final String TBL_LM_FRUCTOSE = "fructose";
+    public static final String TBL_LM_HISTAMIN = "histamin";
+
+
+
 
 }
 
