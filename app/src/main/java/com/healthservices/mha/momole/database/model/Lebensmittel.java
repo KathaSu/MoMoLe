@@ -22,22 +22,27 @@ public class Lebensmittel {
             this.id = id;
         }
 
-        public long getUhrzeit() { return tstmp;}
-        public void setUhrzeit(long tstmp) {this.tstmp = tstmp;}
+        public long getTstmp() { return tstmp;}
+        public void setTstmp(long tstmp) {this.tstmp = tstmp;}
 
-        public String getBezeichnung() {
+        public String getDes() {
             return des;
         }
-        public void setBezeichnung(String des) {
+        public void setDes(String des) {
             this.des = des;
         }
 
-        public String getKategorie() {
-            return category;
-        }
-        public void setKategorie(String category) {
-            this.category = category;
-        }
+        public String getLactose() {return lactose;}
+        public void setLactose (String Lactose) {this.lactose = lactose;}
+
+        public String getGluten() {return gluten;}
+        public void setGluten (String gluten) {this.gluten = gluten;}
+
+        public String getHistamin() {return histamin;}
+        public void setHistamin(String histamin) {this.histamin = histamin;}
+
+        public String getFructose() {return fructose;}
+        public void  setFructose(String fructose) {this.fructose = fructose}
 
     }
 }
