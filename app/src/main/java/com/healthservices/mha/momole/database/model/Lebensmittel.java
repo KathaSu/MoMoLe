@@ -10,10 +10,10 @@ public class Lebensmittel {
         private long id = -1;
         private long tstmp;
         private String des;
-        private String lactose;
-        private String gluten;
-        private String histamin;
-        private String fructose;
+        private String lac;
+        private String glu;
+        private String his;
+        private String fru;
 
         public long getId() {
             return id;
@@ -32,17 +32,16 @@ public class Lebensmittel {
             this.des = des;
         }
 
-        public String getLactose() {return lactose;}
-        public void setLactose (String Lactose) {this.lactose = lactose;}
+        public String getLac() {return lac;}
+        public void setLac (String lac) {this.lac = lac;}
 
-        public String getGluten() {return gluten;}
-        public void setGluten (String gluten) {this.gluten = gluten;}
+        public String getGlu() {return glu;}
+        public void setGlu (String glu) {this.glu = glu;}
 
-        public String getHistamin() {return histamin;}
-        public void setHistamin(String histamin) {this.histamin = histamin;}
+        public String getHis() {return his;}
+        public void setHis(String his) {this.his = his;}
 
-        public String getFructose() {return fructose;}
-        public void  setFructose(String fructose) {this.fructose = fructose}
-
+        public String getFru() {return fru;}
+        public void  setFru(String fru) {this.fru = fru}
     }
 }
