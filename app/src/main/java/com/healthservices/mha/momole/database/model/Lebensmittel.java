@@ -22,27 +22,25 @@ public class Lebensmittel {
             this.id = id;
         }
 
-        public long getTstmp() { return tstmp;}
-        public void setTstmp(long tstmp) {this.tstmp = tstmp;}
+        public long getTstmp() { return tstmp; }
+        public void setTstmp(long tstmp) { this.tstmp = tstmp; }
 
         public String getDes() {
             return des;
         }
-        public void setDes(String des) {
-            this.des = des;
-        }
+        public void setDes(String des) { this.des = des; }
 
-        public String getLac() {return lac;}
-        public void setLac (String lac) {this.lac = lac;}
+        public String getLac() { return lac; }
+        public void setLac (String lac) { this.lac = lac; }
 
-        public String getGlu() {return glu;}
-        public void setGlu (String glu) {this.glu = glu;}
+        public String getGlu() { return glu; }
+        public void setGlu (String glu) { this.glu = glu; }
 
-        public String getFru() {return fru;}
-        public void  setFru(String fru) {this.fru = fru;}
+        public String getFru() { return fru; }
+        public void  setFru(String fru) { this.fru = fru; }
 
-        public String getHis() {return his;}
-        public void setHis(String his) {this.his = his;}
+        public String getHis() { return his; }
+        public void setHis(String his) { this.his = his; }
 
 
     }

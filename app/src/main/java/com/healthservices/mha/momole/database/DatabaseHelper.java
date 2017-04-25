@@ -14,15 +14,15 @@ public class DatabaseHelper {
     private static final int DATABASE_VERSION = 1;
     private static DatabaseHelper instance;
 
-    private DatabaseHelper(Context context, SQLiteDatabase.CursorFactory factory){
-        super(context, DATABASE_NAME, factory, DATABASE_VERSION);
-    }
-    public static DatabaseHelper getInstance (Context context){
-        if (instance == null){
-            instance = new DatabaseHelper(context, null);
+    //private DatabaseHelper(Context context, SQLiteDatabase.CursorFactory factory){
+      //  super(context, DATABASE_NAME, factory, DATABASE_VERSION);
+    //}
+    //public static DatabaseHelper getInstance (Context context){
+       // if (instance == null){
+    //instance = new DatabaseHelper(context, null);
         }
-        return instance;
-    }
+      //  return instance;
+    //}
 
     //@Override
     //public void onCreate(SQLiteDatabase db){
@@ -33,5 +33,5 @@ public class DatabaseHelper {
     //public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion){
         //MomoleDAO.getInstance(null).onUpgrade(db, oldVersion, newVersion);
    // }
-}
+//}
 
