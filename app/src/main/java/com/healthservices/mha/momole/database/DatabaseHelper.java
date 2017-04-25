@@ -27,7 +27,7 @@ public class DatabaseHelper {
     //@Override
     //public void onCreate(SQLiteDatabase db){
     //    MomoleDAO.getInstance(null).onCreate(db);
-    }
+    //}
 
     //@Override
     //public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion){
