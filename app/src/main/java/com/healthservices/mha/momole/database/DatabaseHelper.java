@@ -8,7 +8,7 @@ import android.database.sqlite.SQLiteOpenHelper;
  * Created by manji on 23.04.2017.
  */
 
-public class DatabaseHelper extends SQLiteOpenHelper {
+public class DatabaseHelper {
 
     private static final String DATABASE_NAME = "momole.db";
     private static final int DATABASE_VERSION = 1;
@@ -24,14 +24,14 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return instance;
     }
 
-    @Override
-    public void onCreate(SQLiteDatabase db){
-        MomoleDAO.getInstance(null).onCreate(db);
-    }
+    //@Override
+    //public void onCreate(SQLiteDatabase db){
+    //    MomoleDAO.getInstance(null).onCreate(db);
+    //}
 
-    @Override
-    public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion){
-        MomoleDAO.getInstance(null).onUpgrade(db, oldVersion, newVersion);
-    }
+    //@Override
+    //public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion){
+        //MomoleDAO.getInstance(null).onUpgrade(db, oldVersion, newVersion);
+   // }
 }
 
