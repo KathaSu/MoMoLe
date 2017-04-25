@@ -73,9 +73,7 @@ public class DBHelper {
             + TBL_N_DESCRIPTION + " TEXT "
             + ");";
 
-    public DBHelper(Context context){
-        super(context, DATABASE_NAME, null, DATABASE_VERSION);
-    }
+    public DBHelper(Context context){super(context, DATABASE_NAME, null, DATABASE_VERSION);}
 
     @Override
     public void onCreate(SQLiteDatabase database){
