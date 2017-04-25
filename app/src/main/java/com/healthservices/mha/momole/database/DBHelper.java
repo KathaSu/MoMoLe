@@ -75,9 +75,9 @@ public class DBHelper {
     }
 
     @Override
-    public void onCreate(SQLiteDatabase db){
-        db.execSQL(SQL_CREATE_LM);
-        db.execSQL(SQL_CREATE_TBL_B);
-        db.execSQL(SQL_CREATE_TBL_N);
+    public void onCreate(SQLiteDatabase database){
+        database.execSQL(CREATE_TBL_LM);
+        database.execSQL(CREATE_TBL_B);
+        database.execSQL(CREATE_TBL_N);
     }
 }
