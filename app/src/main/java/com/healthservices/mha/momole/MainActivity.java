@@ -55,7 +55,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
-        currentFragment = getFragmentManager().findFragmentById(R.id.fragment_container);
+        currentFragment = getFragmentManager().findFragmentById(R.id.fragement_container);
 
         if (currentFragment == null) {
             currentFragment = MainFragment.newInstance();
