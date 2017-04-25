@@ -1,14 +1,9 @@
 package com.healthservices.mha.momole.database;
 
-import android.content.ContentValues;
 import android.content.Context;
-import android.database.Cursor;
-import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 
-import java.util.LinkedList;
-import java.util.List;
-
+import java.util.ArrayList;
 
 /**
  * Created by manji on 25.04.2017.
@@ -16,24 +11,15 @@ import java.util.List;
 
 public class LebensmittelDAO {
 
-    public static final String TBL_LM = "lebensmittel";
-    public static final String TBL_LM_ID = "id";
-    public static final String TBL_LM_TIME = "time";
-    public static final String TBL_LM_DESCRIPTION = "des";
-    public static final String TBL_LM_LACTOSE = "lac";
-    public static final String TBL_LM_GLUTEN = "glu";
-    public static final String TBL_LM_FRUCTOSE = "fru";
-    public static final String TBL_LM_HISTAMIN = "his";
+    public static final String TAG = "LebensmittelDAO";
 
-    public static final String CREATE_TBL_LM = "CREATE TBL " + TBL_LM + "("
-            + TBL_LM_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, "
-            + TBL_LM_TIME + " INTEGER NOT NULL, "
-            + TBL_LM_DESCRIPTION + " TEXT, "
-            + TBL_LM_LACTOSE + " TEXT, "
-            + TBL_LM_GLUTEN + " TEXT, "
-            + TBL_LM_FRUCTOSE + " TEXT, "
-            + TBL_LM_HISTAMIN + " TEXT, ";
-
+    // DB fields
+    private SQLiteDatabase mDatabase;
+    private DBHelper mDbHelper;
+    private Context mcontext;
+    private String[] mAllColumns ={DBHelper.TBL_LM_ID, DBHelper.TBL_LM_TIME,
+            DBHelper.TBL_LM_DESCRIPTION, DBHelper.TBL_LM_LACTOSE, DBHelper.TBL_LM_GLUTEN,
+            DBHelper.TBL_LM_FRUCTOSE, DBHelper.TBL_LM_HISTAMIN};
 
 }
 
