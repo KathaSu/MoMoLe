@@ -28,7 +28,7 @@
             android:inputType="textPersonName"
             android:text="Datenschutz"
             tools:layout_editor_absoluteX="7dp"
-            tools:layout_editor_absoluteY="107dp" />
+            tools:layout_editor_absoluteY="112dp" />
 
         <EditText
             android:id="@+id/editText3"
