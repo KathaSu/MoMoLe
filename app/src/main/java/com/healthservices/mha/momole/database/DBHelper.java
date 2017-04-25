@@ -95,5 +95,9 @@ public class DBHelper {
         onCreate(database);
     }
 
+    public DBHelper(Context context, String name, SQLiteDatabase.CursorFactory factory, int version){
+        super(context, DATABASE_NAME, factory, DATABASE_VERSION);
+    }
+
 
 }
