@@ -5,12 +5,9 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
-import android.util.Log;
 
-import com.healthservices.mha.momole.database.model.Beschwerden;
-import com.healthservices.mha.momole.database.model.Notizen;
+import com.healthservices.mha.momole.database.model.Lebensmittel;
 
-import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -22,31 +19,39 @@ import static java.nio.channels.SocketChannel.open;
 
 public class LebensmittelDAO {
 
-    // columns of the Notizen table
-    public static final String TBL_N = "notizen";
-    public static final String TBL_N_ID = "id";
-    public static final String TBL_N_TIME = "time";
-    public static final String TBL_N_DESCRIPTION = "des";
+    //columns of the Lebensmittel table
+    public static final String TBL_LM = "lebensmittel";
+    public static final String TBL_LM_ID = "id";
+    public static final String TBL_LM_TIME = "time";
+    public static final String TBL_LM_DESCRIPTION = "des";
+    public static final String TBL_LM_LACTOSE = "lac";
+    public static final String TBL_LM_GLUTEN = "glu";
+    public static final String TBL_LM_FRUCTOSE = "fru";
+    public static final String TBL_LM_HISTAMIN = "his";
 
-    //sql statement of the notizen table
-    public static final String CREATE_TBL_N = "CREATE TBL " + TBL_N + "("
-            + TBL_N_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, "
-            + TBL_N_TIME + " INTEGER NOT NULL, "
-            + TBL_N_DESCRIPTION + " TEXT "
+    //sql statement of the lebensmittel table
+    public static final String CREATE_TBL_LM = "CREATE TBL " + TBL_LM + "("
+            + TBL_LM_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, "
+            + TBL_LM_TIME + " INTEGER NOT NULL, "
+            + TBL_LM_DESCRIPTION + " TEXT, "
+            + TBL_LM_LACTOSE + " TEXT, "
+            + TBL_LM_GLUTEN + " TEXT, "
+            + TBL_LM_FRUCTOSE + " TEXT, "
+            + TBL_LM_HISTAMIN + " TEXT "
             + ");";
 
-    private static com.healthservices.mha.momole.database.BeschwerdenDAO instance;
+    private static LebensmittelDAO instance;
     private DBHelper dbHelper;
     private SQLiteDatabase database;
 
-    public static NotizenDAO getInstance(Context context){
+    public static LebensmittelDAO getInstance(Context context){
         if (instance == null){
-            instance = new NotizenDAO(context);
+            instance = new LebensmittelDAO(context);
         }
         return instance;
     }
 
-    private NotizenDAO(Context context){
+    private LebensmittelDAO(Context context){
         dbHelper = DBHelper.getInstance(context);
     }
 
@@ -59,18 +64,18 @@ public class LebensmittelDAO {
     }
 
     public void onCreate(SQLiteDatabase database){
-        database.execSQL(CREATE_TBL_N);
+        database.execSQL(CREATE_TBL_LM);
     }
 
     public void onUpgrade(SQLiteDatabase database, int oldVersion, int newVersion){
 
     }
 
-    public Beschwerden getNotizen(long id) {
+    public Lebensmittel getLebensmittel(long id) {
         open();
-        Cursor cursor = database.query(TBL_N, //Table
+        Cursor cursor = database.query(TBL_LM, //Table
                 null, //null returns all columns / fields
-                TBL_N_ID + "=?", //Selection (WHERE [field]=?)
+                TBL_LM_ID + "=?", //Selection (WHERE [field]=?)
                 new String[]{String.valueOf(id)}, //Selection arguments (selection by id)
                 null, //GroupBy (GROUPY BY [field], e. g. in case of sum([field]))
                 null, //Having, Selection on Group By fields (HAVING [field]=1)
@@ -84,11 +89,11 @@ public class LebensmittelDAO {
         return null;
     }
 
-    public List<Notizen> getAllNotizen() {
+    public List<Lebensmittel> getAllLebensmittel() {
         open();
 
-        Cursor cursor = database.query(TBL_N, //Table
-                new String[] {TBL_N_ID, TBL_N_TIME, TBL_N_DESCRIPTION,}, //Fields, null would also return all columns / fields
+        Cursor cursor = database.query(TBL_LM, //Table
+                new String[] {TBL_LM_ID, TBL_LM_TIME, TBL_LM_DESCRIPTION, TBL_LM_LACTOSE, TBL_LM_GLUTEN, TBL_LM_FRUCTOSE, TBL_LM_HISTAMIN,}, //Fields, null would also return all columns / fields
                 null, //Selection (WHERE [field]=?)
                 null, //Selection arguments (replaces ? in Selection)
                 null, //GroupBy (GROUPY BY [field], e. g. in case of sum([field]))
@@ -96,68 +101,84 @@ public class LebensmittelDAO {
                 null, //Limit, limits the selection, e. g. 10 for 10 entries
                 null); //CancelationSignal
 
-        List<Notizen> notizen = new LinkedList<>();
+        List<Lebensmittel> lebensmittel = new LinkedList<>();
         if (cursor.moveToFirst()) { // read in the the result row by row, if data available
             while (!cursor.isAfterLast()) {
-                notizen.add(readFromCursor(cursor));
+                lebensmittel.add(readFromCursor(cursor));
                 cursor.moveToNext();
             }
         }
 
-    public long addNotizen(Notizen notizen) {
+    public long addLebensmittel(Lebensmittel lebensmittel) {
         open();
-        long ret = database.insert(TBL_N, null, prepareValues(notizen));
+        long ret = database.insert(TBL_LM, null, prepareValues(lebensmittel));
         if (ret > 0) {
-            notizen.setId(ret);
+            lebensmittel.setId(ret);
         }
         close();
         return ret;
     }
 
-    public int updateNotizen(Notizen notizen) {
+    public int updateLebensmittel(Lebensmittel lebensmittel) {
         open();
-        int ret = database.update(TBL_N, //Table
-                prepareValues(notizen), //Values
-                TBL_N_ID + "=?", //Selection (what data to update)
-                new String[]{String.valueOf(notizen.getId())}); // selection by id
+        int ret = database.update(TBL_LM, //Table
+                prepareValues(lebensmittel), //Values
+                TBL_LM_ID + "=?", //Selection (what data to update)
+                new String[]{String.valueOf(lebensmittel.getId())}); // selection by id
         close();
         return ret;
     }
 
-    public int deleteNotizen(Notizen notizen) {
+    public int deleteLebensmittel(Lebensmittel lebensmittel) {
         open();
-        int ret = database.delete(TBL_N,
-                TBL_N_ID + "=?", //Selection (what data to delete)
-                new String[]{String.valueOf(notizen.getId())}); // selection by id
+        int ret = database.delete(TBL_LM,
+                TBL_LM_ID + "=?", //Selection (what data to delete)
+                new String[]{String.valueOf(lebensmittel.getId())}); // selection by id
         close();
         return ret;
     }
 
-    private ContentValues prepareValues(Notizen notizen) {
+    private ContentValues prepareValues(Lebensmittel lebensmittel) {
         ContentValues contentValues = new ContentValues();
 
-        if (notizen.getId() > 0)
-            contentValues.put(TBL_N_ID, notizen.getId());
+        if (lebensmittel.getId() > 0)
+            contentValues.put(TBL_LM_ID, lebensmittel.getId());
 
-        contentValues.put(TBL_N_DESCRIPTION, notizen.getDescription());
-        contentValues.put(TBL_N_TIME, notizen.getTime());
+        contentValues.put(TBL_LM_DESCRIPTION, lebensmittel.getDescription());
+        contentValues.put(TBL_LM_TIME, lebensmittel.getTime());
+        contentValues.put(TBL_LM_LACTOSE, lebensmittel.getLactose());
+        contentValues.put(TBL_LM_GLUTEN, lebensmittel.getGluten());
+        contentValues.put(TBL_LM_FRUCTOSE, lebensmittel.getFructose());
+        contentValues.put(TBL_LM_HISTAMIN, lebensmittel.getHistamin());
 
         return contentValues;
     }
 
-    private Notizen readFromCursor(Cursor cursor) {
-        Notizen notizen = new Notizen();
+    private Lebensmittel readFromCursor(Cursor cursor) {
+        Lebensmittel lebensmittel = new Lebensmittel();
 
-        int index = cursor.getColumnIndex(TBL_N_ID);
-        notizen.setId(cursor.getLong(index));
+        int index = cursor.getColumnIndex(TBL_LM_ID);
+        lebensmittel.setId(cursor.getLong(index));
 
-        index = cursor.getColumnIndex(TBL_N_TIME);
-        notizen.setTime(cursor.getLong(index));
+        index = cursor.getColumnIndex(TBL_LM_TIME);
+        lebensmittel.setTime(cursor.getLong(index));
 
-        index = cursor.getColumnIndex(TBL_N_DESCRIPTION);
-        notizen.setDes(cursor.getString(index));
+        index = cursor.getColumnIndex(TBL_LM_DESCRIPTION);
+        lebensmittel.setDes(cursor.getString(index));
 
-        return notizen;
+        index = cursor.getColumnIndex(TBL_LM_LACTOSE);
+        lebensmittel.setLac(cursor.getString(index));
+
+        index = cursor.getColumnIndex(TBL_LM_GLUTEN);
+        lebensmittel.setGlu(cursor.getString(index));
+
+        index = cursor.getColumnIndex(TBL_LM_FRUCTOSE);
+        lebensmittel.setFru(cursor.getString(index));
+
+        index = cursor.getColumnIndex(TBL_LM_HISTAMIN);
+        lebensmittel.setHis(cursor.getString(index));
+
+        return lebensmittel;
     }
 }
 }
