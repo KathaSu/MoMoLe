@@ -6,7 +6,7 @@ package com.healthservices.mha.momole.database.model;
 
 public class Lebensmittel {
 
-    public class Momole {
+    public class TBL_LM {
         private long id = -1;
         private long time;
         private String des;

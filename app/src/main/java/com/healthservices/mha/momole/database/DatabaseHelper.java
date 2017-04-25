@@ -14,18 +14,13 @@ public class DatabaseHelper {
     private static final int DATABASE_VERSION = 1;
     private static DatabaseHelper instance;
 
-    private DatabaseHelper(Context context, SQLiteDatabase.CursorFactory factory){
-      super(context, DATABASE_NAME, factory, DATABASE_VERSION);
-    }
-    public static DatabaseHelper getInstance (Context context){
-     if (instance == null){instance = new DatabaseHelper(context, null);
-        }
-      return instance;
+    public DatabaseHelper(Context context) {
+      super(context, DATABASE_NAME, null, DATABASE_VERSION);
     }
 
     @Override
     public void onCreate(SQLiteDatabase db){
-        LebensmittelDAO.getInstance(null).onCreate(db);
+        LebensmittelDAO.exeSQL(SQL_CREATE_TBL_LM);
         BeschwerdenDAO.getInstance(null).onCreate(db);
         NotizenDAO.getInstance(null).onCreate(db);
     }
@@ -39,3 +34,8 @@ public class DatabaseHelper {
    }
 
 
+    //public static DatabaseHelper getInstance (Context context){
+      //  if (instance == null){instance = new DatabaseHelper(context, null);
+        //}
+        //return instance;
+    //}
