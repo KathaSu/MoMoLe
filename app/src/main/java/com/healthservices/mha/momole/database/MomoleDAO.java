@@ -115,7 +115,7 @@ public class MomoleDAO {
         cursor.close();
         close();
         return null;
-    }
+    }*/
 
     /*private Momole readFromCursor(Cursor cursor) {
     }
