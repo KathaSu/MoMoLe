@@ -52,7 +52,7 @@ public class DBHelper {
             + TBL_LM_GLUTEN + " TEXT, "
             + TBL_LM_FRUCTOSE + " TEXT, "
             + TBL_LM_HISTAMIN + " TEXT "
-            +");";
+            + ");";
 
     //sql statement of the beschwerden table
     public static final String CREATE_TBL_B = "CREATE TBL " + TBL_B + "("
@@ -64,14 +64,14 @@ public class DBHelper {
             + TBL_B_SKINPBL + " TEXT, "
             + TBL_B_RESPIDISTRESS + " TEXT, "
             + TBL_B_FEVER + " TEXT "
-            +");";
+            + ");";
 
     //sql statement of the notizen table
     public static final String CREATE_TBL_N = "CREATE TBL " + TBL_N + "("
             + TBL_N_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, "
             + TBL_N_TIME + " INTEGER NOT NULL, "
             + TBL_N_DESCRIPTION + " TEXT "
-            +");";
+            + ");";
 
     public DBHelper(Context context){
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
@@ -98,6 +98,4 @@ public class DBHelper {
     public DBHelper(Context context, String name, SQLiteDatabase.CursorFactory factory, int version){
         super(context, DATABASE_NAME, factory, DATABASE_VERSION);
     }
-
-
 }
