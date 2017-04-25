@@ -24,14 +24,14 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return instance;
     }
 
-    @Override
-    public void onCreate(SQLiteDatabase db){
-        MomoleDAO.getInstance(null).onCreate(db);
+    //@Override
+    //public void onCreate(SQLiteDatabase db){
+    //    MomoleDAO.getInstance(null).onCreate(db);
     }
 
-    @Override
-    public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion){
-        MomoleDAO.getInstance(null).onUpgrade(db, oldVersion, newVersion);
-    }
+    //@Override
+    //public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion){
+        //MomoleDAO.getInstance(null).onUpgrade(db, oldVersion, newVersion);
+   // }
 }
 
