@@ -12,8 +12,8 @@ public class Lebensmittel {
         private String des;
         private String lac;
         private String glu;
-        private String his;
         private String fru;
+        private String his;
 
         public long getId() {
             return id;

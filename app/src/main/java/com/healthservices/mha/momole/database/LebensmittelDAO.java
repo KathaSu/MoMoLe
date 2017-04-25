@@ -8,7 +8,7 @@ public class LebensmittelDAO {
 
     public static final String TBL_LM = "lebensmittel";
     public static final String TBL_LM_ID = "id";
-    public static final String TBL_LM_TSTMP= "tstmp";
+    public static final String TBL_LM_TSTMP = "tstmp";
     public static final String TBL_LM_DESCRIPTION = "des";
     public static final String TBL_LM_LACTOSE = "lac";
     public static final String TBL_LM_GLUTEN = "glu";
