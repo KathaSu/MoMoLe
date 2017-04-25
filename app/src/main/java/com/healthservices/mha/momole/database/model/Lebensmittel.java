@@ -38,10 +38,12 @@ public class Lebensmittel {
         public String getGlu() {return glu;}
         public void setGlu (String glu) {this.glu = glu;}
 
+        public String getFru() {return fru;}
+        public void  setFru(String fru) {this.fru = fru;}
+
         public String getHis() {return his;}
         public void setHis(String his) {this.his = his;}
 
-        public String getFru() {return fru;}
-        public void  setFru(String fru) {this.fru = fru}
+
     }
 }
