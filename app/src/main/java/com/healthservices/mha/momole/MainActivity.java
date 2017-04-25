@@ -55,7 +55,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
-        currentFragment = getFragmentManager().findFragmentById(R.id.fragement_container);
+        currentFragment = getFragmentManager().findFragmentById(R.id.fragment_container);
 
         if (currentFragment == null) {
             currentFragment = MainFragment.newInstance();
@@ -66,7 +66,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
 
     @Override
-    public void onBackPressed(){
+    public void onBackPressed() {
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         if (drawer.isDrawerOpen(GravityCompat.START)) {
             drawer.closeDrawer(GravityCompat.START);

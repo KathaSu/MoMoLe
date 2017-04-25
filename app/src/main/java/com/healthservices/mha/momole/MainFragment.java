@@ -23,9 +23,9 @@ import eu.englich.payments.database.model.Payment;
 
 public class MainFragment extends Fragment {
 
-    private ListView listView;
-    private PaymentAdapter listAdapter;
-    private SimpleDateFormat dateFormat = new SimpleDateFormat("dd.MM.yyyy HH:mm:ss");
+    //private ListView listView;
+    //private PaymentAdapter listAdapter;
+    //private SimpleDateFormat dateFormat = new SimpleDateFormat("dd.MM.yyyy HH:mm:ss");
 
     public MainFragment() {
         // Required empty public constructor
@@ -40,26 +40,26 @@ public class MainFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_main, container, false);
+        return inflater.inflate(R.layout.content_main, container, false);
     }
 
     @Override
     public void onViewCreated(View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        listView = (ListView) view.findViewById(R.id.mainPaymentsList);
+        /*listView = (ListView) view.findViewById(R.id.mainPaymentsList);
         listAdapter = new PaymentAdapter();
-        listView.setAdapter(listAdapter);
+        listView.setAdapter(listAdapter);*/
 
     }
 
     @Override
     public void onResume() {
         super.onResume();
-        listAdapter.notifyDataSetChanged();
+        //listAdapter.notifyDataSetChanged();
     }
 
-    private class PaymentAdapter extends BaseAdapter {
+    /*private class PaymentAdapter extends BaseAdapter {
 
         private List<Payment> payments;
 
@@ -111,6 +111,6 @@ public class MainFragment extends Fragment {
         private String formatDate(long timestamp) {
             return dateFormat.format(new Date(timestamp));
         }
-    }
+    }*/
 
 }
