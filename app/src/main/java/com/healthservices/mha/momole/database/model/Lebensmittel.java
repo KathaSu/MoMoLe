@@ -6,14 +6,14 @@ package com.healthservices.mha.momole.database.model;
 
 public class Lebensmittel {
 
-    public class Momole {
+    public class TBL_LM {
         private long id = -1;
-        private long tstmp;
+        private long time;
         private String des;
-        private String lactose;
-        private String gluten;
-        private String histamin;
-        private String fructose;
+        private String lac;
+        private String glu;
+        private String fru;
+        private String his;
 
         public long getId() {
             return id;
@@ -22,22 +22,24 @@ public class Lebensmittel {
             this.id = id;
         }
 
-        public long getUhrzeit() { return tstmp;}
-        public void setUhrzeit(long tstmp) {this.tstmp = tstmp;}
+        public long getTime() { return time; }
+        public void setTime(long time) { this.time = time; }
 
-        public String getBezeichnung() {
+        public String getDes() {
             return des;
         }
-        public void setBezeichnung(String des) {
-            this.des = des;
-        }
+        public void setDes(String des) { this.des = des; }
 
-        public String getKategorie() {
-            return category;
-        }
-        public void setKategorie(String category) {
-            this.category = category;
-        }
+        public String getLac() { return lac; }
+        public void setLac (String lac) { this.lac = lac; }
 
+        public String getGlu() { return glu; }
+        public void setGlu (String glu) { this.glu = glu; }
+
+        public String getFru() { return fru; }
+        public void  setFru(String fru) { this.fru = fru; }
+
+        public String getHis() { return his; }
+        public void setHis(String his) { this.his = his; }
     }
 }

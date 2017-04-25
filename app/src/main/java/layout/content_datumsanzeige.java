@@ -7,8 +7,17 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
+import java.text.DateFormat;
+import java.util.Date;
+
+
+import java.util.Date;
+import java.text.SimpleDateFormat;
 
 import com.healthservices.mha.momole.R;
+
+import java.sql.Timestamp;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -30,9 +39,15 @@ public class content_datumsanzeige extends Fragment {
 
     private OnFragmentInteractionListener mListener;
 
-    public content_datumsanzeige() {
-        // Required empty public constructor
-    }
+    //public class currentDate {
+        //SimpleDateFormat dateFormat = new SimpleDateFormat("dd.MM.yyyy hh:mm:ss");
+        //String datum_Zeit = dateFormat.format(new java.util.Date());
+        //String date = new SimpleDateFormat("yyyy-MM-dd").format(new Date());
+        //setContentView(R.layout.fragment_content_datumsanzeige);
+        //TextView date = (TextView) findViewById(R.id.datumsauswahl);
+        //date.setText(datum_Zeit);
+    //}
+
 
     /**
      * Use this factory method to create a new instance of
@@ -42,6 +57,8 @@ public class content_datumsanzeige extends Fragment {
      * @param param2 Parameter 2.
      * @return A new instance of fragment content_datumsanzeige.
      */
+
+
     // TODO: Rename and change types and number of parameters
     public static content_datumsanzeige newInstance(String param1, String param2) {
         content_datumsanzeige fragment = new content_datumsanzeige();
@@ -55,18 +72,24 @@ public class content_datumsanzeige extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
     }
+
+    TextView datumsanzeige;
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_content_datumsanzeige, container, false);
+        View rootView = inflater.inflate(R.layout.fragment_content_datumsanzeige, container, false);
+        datumsanzeige = (TextView)rootView.findViewById(R.id.datumsauswahl);
+        return rootView;
     }
+
+    public void showText(String text) {
+        datumsanzeige.setText("test");
+    }
+
 
     // TODO: Rename method, update argument and hook method into UI event
     public void onButtonPressed(Uri uri) {

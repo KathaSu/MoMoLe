@@ -24,7 +24,7 @@
                 android:id="@+id/datumsauswahl"
                 android:layout_width="177dp"
                 android:layout_height="26dp"
-                android:text="datumanzeige"
+                android:text= "datum_Zeit"
                 android:textAlignment="center"
                 android:layout_weight="0.04" />
 
@@ -33,6 +33,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 app:srcCompat="@android:drawable/ic_media_next" />
+
     </LinearLayout>
 
     <include layout="@layout/fragment_content_buttons"
