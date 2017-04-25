@@ -155,9 +155,5 @@ public class NotizenDAO {
 
             return notizen;
         }
-
     }
-
-
-
 }
