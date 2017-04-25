@@ -39,14 +39,14 @@ public class content_datumsanzeige extends Fragment {
 
     private OnFragmentInteractionListener mListener;
 
-    public class currentDate {
+    //public class currentDate {
         //SimpleDateFormat dateFormat = new SimpleDateFormat("dd.MM.yyyy hh:mm:ss");
         //String datum_Zeit = dateFormat.format(new java.util.Date());
         //String date = new SimpleDateFormat("yyyy-MM-dd").format(new Date());
         //setContentView(R.layout.fragment_content_datumsanzeige);
         //TextView date = (TextView) findViewById(R.id.datumsauswahl);
         //date.setText(datum_Zeit);
-    }
+    //}
 
 
     /**
@@ -72,18 +72,24 @@ public class content_datumsanzeige extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
     }
+
+    TextView datumsanzeige;
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_content_datumsanzeige, container, false);
+        View rootView = inflater.inflate(R.layout.fragment_content_datumsanzeige, container, false);
+        datumsanzeige = (TextView)rootView.findViewById(R.id.datumsauswahl);
+        return rootView;
     }
+
+    public void showText(String text) {
+        datumsanzeige.setText("test");
+    }
+
 
     // TODO: Rename method, update argument and hook method into UI event
     public void onButtonPressed(Uri uri) {
