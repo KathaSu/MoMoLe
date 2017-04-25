@@ -3,12 +3,15 @@ package com.healthservices.mha.momole.database;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.util.Log;
 
 /**
  * Created by manji on 25.04.2017.
  */
 
 public class DBHelper {
+
+    public static final String TAG = "DBHelper";
 
     //columns of the Lebensmittel table
     public static final String TBL_LM = "lebensmittel";
@@ -80,4 +83,17 @@ public class DBHelper {
         database.execSQL(CREATE_TBL_B);
         database.execSQL(CREATE_TBL_N);
     }
+    @Override
+    public void onUpgrade(SQLiteDatabase database, int oldVersion, int newVersion){
+        Log.w(TAG,
+                "Upgrading the database from version" + oldVersion + " to"+ newVersion );
+        //clear all data
+        database.execSQL("DROP TABLE IF EXISTS " + TBL_LM);
+        database.execSQL("DROP TABLE IF EXISTS" + TBL_B);
+        database.execSQL("DROP TABLE IF EXISTS" + TBL_N);
+        // recreate the table
+        onCreate(database);
+    }
+
+
 }
