@@ -39,16 +39,6 @@ public class content_datumsanzeige extends Fragment {
 
     private OnFragmentInteractionListener mListener;
 
-    //public class currentDate {
-        //SimpleDateFormat dateFormat = new SimpleDateFormat("dd.MM.yyyy hh:mm:ss");
-        //String datum_Zeit = dateFormat.format(new java.util.Date());
-        //String date = new SimpleDateFormat("yyyy-MM-dd").format(new Date());
-        //setContentView(R.layout.fragment_content_datumsanzeige);
-        //TextView date = (TextView) findViewById(R.id.datumsauswahl);
-        //date.setText(datum_Zeit);
-    //}
-
-
     /**
      * Use this factory method to create a new instance of
      * this fragment using the provided parameters.
@@ -74,20 +64,11 @@ public class content_datumsanzeige extends Fragment {
         super.onCreate(savedInstanceState);
     }
 
-    TextView datumsanzeige;
-
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View rootView = inflater.inflate(R.layout.fragment_content_datumsanzeige, container, false);
-        datumsanzeige = (TextView)rootView.findViewById(R.id.datumsauswahl);
-        return rootView;
-    }
-
-    public void showText(String text) {
-        datumsanzeige.setText("test");
+        return inflater.inflate(R.layout.fragment_content_datumsanzeige, container, false);
     }
 
 
@@ -128,5 +109,9 @@ public class content_datumsanzeige extends Fragment {
     public interface OnFragmentInteractionListener {
         // TODO: Update argument type and name
         void onFragmentInteraction(Uri uri);
+    }
+
+    public class currentDate {
+
     }
 }
