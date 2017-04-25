@@ -7,7 +7,7 @@ package com.healthservices.mha.momole.database.model;
 public class Beschwerden {
 
     private long id = -1;
-    private long tstmp;
+    private long time;
     private String des;
     private String dige;
     private String head;
@@ -22,8 +22,8 @@ public class Beschwerden {
         this.id = id;
     }
 
-    public long getTstmp() { return tstmp; }
-    public void setTstmp(long tstmp) { this.tstmp = tstmp; }
+    public long getTime() { return time; }
+    public void setTime(long time) { this.time = time; }
 
     public String getDes() {
         return des;
