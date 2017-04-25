@@ -38,4 +38,34 @@ public class DBHelper {
     public static final String TBL_N_TIME = "time";
     public static final String TBL_N_DESCRIPTION = "des";
 
+    private static final String DATABASE_NAME = "momole.db";
+    private static final int DATABASE_VERSION = 1;
+
+    //sql statement of the lebensmittel table
+    public static final String CREATE_TBL_LM = "CREATE TBL " + TBL_LM + "("
+            + TBL_LM_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, "
+            + TBL_LM_TIME + " INTEGER NOT NULL, "
+            + TBL_LM_DESCRIPTION + " TEXT, "
+            + TBL_LM_LACTOSE + " TEXT, "
+            + TBL_LM_GLUTEN + " TEXT, "
+            + TBL_LM_FRUCTOSE + " TEXT, "
+            + TBL_LM_HISTAMIN + " TEXT, ";
+
+    //sql statement of the beschwerden table
+    public static final String CREATE_TBL_B = "CREATE TBL " + TBL_B + "("
+            + TBL_B_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, "
+            + TBL_B_TIME + " INTEGER NOT NULL, "
+            + TBL_B_DESCRIPTION + " TEXT, "
+            + TBL_B_DIGESTIVPBL + " TEXT, "
+            + TBL_B_HEADACHE + " TEXT, "
+            + TBL_B_SKINPBL + " TEXT, "
+            + TBL_B_RESPIDISTRESS + " TEXT, "
+            + TBL_B_FEVER + " TEXT, ";
+
+    //sql statement of the notizen table
+    public static final String CREATE_TBL_N = "CREATE TBL " + TBL_N + "("
+            + TBL_N_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, "
+            + TBL_N_TIME + " INTEGER NOT NULL, "
+            + TBL_N_DESCRIPTION + " TEXT, ";
+
 }
