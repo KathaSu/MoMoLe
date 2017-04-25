@@ -7,7 +7,6 @@ import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 
 import com.healthservices.mha.momole.database.model.Beschwerden;
-import com.healthservices.mha.momole.database.model.Lebensmittel;
 
 import java.util.LinkedList;
 import java.util.List;
