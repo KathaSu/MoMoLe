@@ -1,0 +1,53 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="layout.content_einstellungen">
+
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <EditText
+            android:id="@+id/editText"
+            android:layout_width="213dp"
+            android:layout_height="58dp"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:text="Einstellungen"
+            tools:layout_editor_absoluteX="9dp"
+            tools:layout_editor_absoluteY="16dp" />
+
+        <EditText
+            android:id="@+id/editText2"
+            android:layout_width="371dp"
+            android:layout_height="43dp"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:text="Datenschutz"
+            tools:layout_editor_absoluteX="7dp"
+            tools:layout_editor_absoluteY="107dp" />
+
+        <EditText
+            android:id="@+id/editText3"
+            android:layout_width="wrap_content"
+            android:layout_height="44dp"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:text="Ton & Vibration"
+            tools:layout_editor_absoluteX="9dp"
+            tools:layout_editor_absoluteY="165dp" />
+
+        <Switch
+            android:id="@+id/switch2"
+            android:layout_width="141dp"
+            android:layout_height="44dp"
+            android:text="Switch"
+            tools:layout_editor_absoluteX="237dp"
+            tools:layout_editor_absoluteY="165dp" />
+
+    </android.support.constraint.ConstraintLayout>
+
+</FrameLayout>
