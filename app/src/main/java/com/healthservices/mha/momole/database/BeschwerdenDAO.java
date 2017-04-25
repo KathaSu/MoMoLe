@@ -184,8 +184,6 @@ public class BeschwerdenDAO {
             index = cursor.getColumnIndex(TBL_B_FEVER);
             beschwerden.setFev(cursor.getString(index));
 
-
-
             return beschwerden;
         }
 
