@@ -16,25 +16,15 @@ import java.util.List;
 
 public class BeschwerdenDAO {
 
-    public static final String TBL_B = "beschwerden";
-    public static final String TBL_B_ID = "id";
-    public static final String TBL_B_TIME = "time";
-    public static final String TBL_B_DESCRIPTION = "des";
-    public static final String TBL_B_DIGESTIVPBL = "dige";
-    public static final String TBL_B_HEADACHE = "head";
-    public static final String TBL_B_SKINPBL = "skin";
-    public static final String TBL_B_RESPIDISTRESS = "resp";
-    public static final String TBL_B_FEVER = "fev";
+    public static final String TAG = "BeschwerdenDAO";
 
-    public static final String CREATE_TBL_B = "CREATE TBL " + TBL_B + "("
-            + TBL_B_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, "
-            + TBL_B_TIME + " INTEGER NOT NULL, "
-            + TBL_B_DESCRIPTION + " TEXT, "
-            + TBL_B_DIGESTIVPBL + " TEXT, "
-            + TBL_B_HEADACHE + " TEXT, "
-            + TBL_B_SKINPBL + " TEXT, "
-            + TBL_B_RESPIDISTRESS + " TEXT, "
-            + TBL_B_FEVER + " TEXT, ";
+    // DB fields
+    private SQLiteDatabase mDatabase;
+    private DBHelper mDbHelper;
+    private Context mcontext;
+    private String[] mAllColumns ={DBHelper.TBL_B_ID, DBHelper.TBL_B_TIME,
+            DBHelper.TBL_B_DESCRIPTION, DBHelper.TBL_B_DIGESTIVPBL, DBHelper.TBL_B_HEADACHE,
+            DBHelper.TBL_B_SKINPBL, DBHelper.TBL_B_RESPIDISTRESS, DBHelper.TBL_B_FEVER};
 
 
 }
