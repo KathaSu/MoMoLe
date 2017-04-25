@@ -6,13 +6,6 @@ package com.healthservices.mha.momole.database.model;
 
 public class Lebensmittel {
 
-    package com.healthservices.mha.momole.database.model;
-
-    /**
-     * Created by manji on 23.04.2017.
-     * edit by katha on 24.04.2017
-     */
-
     public class Momole {
         private long id = -1;
         private long tstmp;
