@@ -7,6 +7,8 @@ import android.util.Log;
 
 import java.util.ArrayList;
 
+import static java.nio.channels.SocketChannel.open;
+
 /**
  * Created by manji on 25.04.2017.
  */
@@ -31,11 +33,15 @@ public class LebensmittelDAO {
             open();
         } catch (SQLException e){
             Log.e(TAG, "SQLException on opening database" + e.getMessage());
-            o.printStackTrace()
+            o.printStackTrace();
         }
     }
-
-
+    public void open() throws SQLException{
+        mDatabase = mDbHelper.getWritableDatabase();
+    }
+    public void close() {
+        mDbHelper.close();
+    }
 }
 
 
