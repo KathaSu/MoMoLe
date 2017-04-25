@@ -7,8 +7,17 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
+import java.text.DateFormat;
+import java.util.Date;
+
+
+import java.util.Date;
+import java.text.SimpleDateFormat;
 
 import com.healthservices.mha.momole.R;
+
+import java.sql.Timestamp;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -30,9 +39,11 @@ public class content_datumsanzeige extends Fragment {
 
     private OnFragmentInteractionListener mListener;
 
-    public content_datumsanzeige() {
-        // Required empty public constructor
+    public class currentDate {
+        SimpleDateFormat dateFormat = new SimpleDateFormat("dd.MM.yyyy hh:mm:ss");
+        String datum_Zeit = dateFormat.format(new java.util.Date());
     }
+
 
     /**
      * Use this factory method to create a new instance of
@@ -42,6 +53,8 @@ public class content_datumsanzeige extends Fragment {
      * @param param2 Parameter 2.
      * @return A new instance of fragment content_datumsanzeige.
      */
+
+
     // TODO: Rename and change types and number of parameters
     public static content_datumsanzeige newInstance(String param1, String param2) {
         content_datumsanzeige fragment = new content_datumsanzeige();
