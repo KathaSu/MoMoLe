@@ -6,7 +6,6 @@ import android.database.Cursor;
 import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 
-import com.healthservices.mha.momole.database.model.Beschwerden;
 import com.healthservices.mha.momole.database.model.Notizen;
 
 import java.util.LinkedList;
