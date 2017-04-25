@@ -10,7 +10,10 @@ public class Lebensmittel {
         private long id = -1;
         private long tstmp;
         private String des;
-        private String category;
+        private String lactose;
+        private String gluten;
+        private String histamin;
+        private String fructose;
 
         public long getId() {
             return id;
