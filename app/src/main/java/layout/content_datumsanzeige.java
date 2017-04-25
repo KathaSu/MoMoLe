@@ -40,8 +40,12 @@ public class content_datumsanzeige extends Fragment {
     private OnFragmentInteractionListener mListener;
 
     public class currentDate {
-        SimpleDateFormat dateFormat = new SimpleDateFormat("dd.MM.yyyy hh:mm:ss");
-        String datum_Zeit = dateFormat.format(new java.util.Date());
+        //SimpleDateFormat dateFormat = new SimpleDateFormat("dd.MM.yyyy hh:mm:ss");
+        //String datum_Zeit = dateFormat.format(new java.util.Date());
+        //String date = new SimpleDateFormat("yyyy-MM-dd").format(new Date());
+        //setContentView(R.layout.fragment_content_datumsanzeige);
+        //TextView date = (TextView) findViewById(R.id.datumsauswahl);
+        //date.setText(datum_Zeit);
     }
 
 
