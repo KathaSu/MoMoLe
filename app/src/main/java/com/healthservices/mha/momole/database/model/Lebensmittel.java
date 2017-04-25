@@ -6,9 +6,9 @@ package com.healthservices.mha.momole.database.model;
 
 public class Lebensmittel {
 
-    public class Momole {
+    public class TBL_LM {
         private long id = -1;
-        private long tstmp;
+        private long time;
         private String des;
         private String lac;
         private String glu;
@@ -22,8 +22,8 @@ public class Lebensmittel {
             this.id = id;
         }
 
-        public long getTstmp() { return tstmp; }
-        public void setTstmp(long tstmp) { this.tstmp = tstmp; }
+        public long getTime() { return time; }
+        public void setTime(long time) { this.time = time; }
 
         public String getDes() {
             return des;
@@ -41,7 +41,5 @@ public class Lebensmittel {
 
         public String getHis() { return his; }
         public void setHis(String his) { this.his = his; }
-
-
     }
 }

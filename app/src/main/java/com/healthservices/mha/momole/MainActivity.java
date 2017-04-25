@@ -1,5 +1,7 @@
 package com.healthservices.mha.momole;
 
+import android.app.FragmentManager;
+import android.app.FragmentTransaction;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -12,12 +14,22 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.MenuInflater;
+import android.app.Fragment;
+import android.app.Notification;
+import android.app.NotificationManager;
+import android.app.PendingIntent;
+import android.content.Intent;
+import android.os.Build;
+import android.preference.PreferenceManager;
+import android.support.annotation.RequiresApi;
 import android.widget.Toast;
+
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
+    private Fragment currentFragment;
 
+    @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -42,8 +54,14 @@ public class MainActivity extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
-    }
 
+    currentFragment = getFragmentManager().findFragmentById(R.id.fragment_container);
+
+        if (currentFragment == null) {
+        currentFragment = MainFragment.newInstance();
+        getFragmentManager().beginTransaction().replace(
+                R.id.fragment_container, currentFragment).commit();
+    }
     @Override
     public void onBackPressed() {
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -83,13 +101,20 @@ public class MainActivity extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.nav_settings) {
-            // Handle the camera action
-        } else if (id == R.id.nav_auswertung) {
+            if (!(currentFragment instanceof MainFragment)) {
+                currentFragment = MainFragment.newInstance();
+                FragmentManager fragmentManager = getFragmentManager();
+                FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+                fragmentTransaction.replace(R.id.fragment_container, currentFragment);
+                fragmentTransaction.commit();
 
-        } else if (id == R.id.nav_faq) {
+            } else if (id == R.id.nav_auswertung) {
 
-        } else if (id == R.id.nav_app) {
+            } else if (id == R.id.nav_faq) {
 
+            } else if (id == R.id.nav_app) {
+
+            }
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
