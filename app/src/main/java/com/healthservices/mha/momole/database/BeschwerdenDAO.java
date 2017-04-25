@@ -140,5 +140,53 @@ public class BeschwerdenDAO {
             return ret;
         }
 
+        private ContentValues prepareValues(Beschwerden beschwerden) {
+            ContentValues contentValues = new ContentValues();
+
+            if (beschwerden.getId() > 0)
+                contentValues.put(TBL_B_ID, beschwerden.getId());
+
+            contentValues.put(TBL_B_DESCRIPTION, beschwerden.getDescription());
+            contentValues.put(TBL_B_TIME, beschwerden.getTime());
+            contentValues.put(TBL_B_DIGESTIVPBL, beschwerden.getDigestivpbl());
+            contentValues.put(TBL_B_HEADACHE, beschwerden.getHeadache());
+            contentValues.put(TBL_B_SKINPBL, beschwerden.getSkinpbl());
+            contentValues.put(TBL_B_RESPIDISTRESS, beschwerden.getRespidistress());
+            contentValues.put(TBL_B_FEVER, beschwerden.getFever());
+
+            return contentValues;
+        }
+
+        private Beschwerden readFromCursor(Cursor cursor) {
+            Beschwerden beschwerden = new Beschwerden();
+
+            int index = cursor.getColumnIndex(TBL_B_ID);
+            beschwerden.setId(cursor.getLong(index));
+
+            index = cursor.getColumnIndex(TBL_B_TIME);
+            beschwerden.setTime(cursor.getLong(index));
+
+            index = cursor.getColumnIndex(TBL_B_DESCRIPTION);
+            beschwerden.setDes(cursor.getString(index));
+
+            index = cursor.getColumnIndex(TBL_B_DIGESTIVPBL);
+            beschwerden.setDige(cursor.getString(index));
+
+            index = cursor.getColumnIndex(TBL_B_HEADACHE);
+            beschwerden.setHead(cursor.getString(index));
+
+            index = cursor.getColumnIndex(TBL_B_SKINPBL);
+            beschwerden.setSkin(cursor.getString(index));
+
+            index = cursor.getColumnIndex(TBL_B_RESPIDISTRESS);
+            beschwerden.setResp(cursor.getString(index));
+
+            index = cursor.getColumnIndex(TBL_B_FEVER);
+            beschwerden.setFev(cursor.getString(index));
+
+
+
+            return beschwerden;
+        }
 
 }
