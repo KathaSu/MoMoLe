@@ -1,19 +1,8 @@
 package layout;
 
-import android.app.Activity;
-import android.app.AlertDialog;
 import android.app.Fragment;
-import android.content.DialogInterface;
-import android.os.Bundle;
-import android.view.View;
-import android.widget.TextView;
-import android.widget.Toast;
-
-import org.w3c.dom.Text;
 
 import com.healthservices.mha.momole.R;
-import com.healthservices.mha.momole.database.MomoleDAO;
-import com.healthservices.mha.momole.database.model.Momole;
 
 public class content_lebensmittel_formular extends Fragment {
     /*@Override
