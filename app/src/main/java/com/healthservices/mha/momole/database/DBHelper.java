@@ -11,6 +11,7 @@ public class DBHelper {
 
     public static final String TAG = "DBHelper";
 
+    //columns of the Lebensmittel table
     public static final String TBL_LM = "lebensmittel";
     public static final String TBL_LM_ID = "id";
     public static final String TBL_LM_TIME = "time";
@@ -20,6 +21,7 @@ public class DBHelper {
     public static final String TBL_LM_FRUCTOSE = "fru";
     public static final String TBL_LM_HISTAMIN = "his";
 
+    // columns of the Beschwerden table
     public static final String TBL_B = "beschwerden";
     public static final String TBL_B_ID = "id";
     public static final String TBL_B_TIME = "time";
@@ -30,6 +32,7 @@ public class DBHelper {
     public static final String TBL_B_RESPIDISTRESS = "resp";
     public static final String TBL_B_FEVER = "fev";
 
+    // columns of the Notizen table
     public static final String TBL_N = "notizen";
     public static final String TBL_N_ID = "id";
     public static final String TBL_N_TIME = "time";
