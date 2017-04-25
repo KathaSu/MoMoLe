@@ -21,7 +21,7 @@
                 android:layout_height="58dp"
                 android:ems="10"
                 android:inputType="textPersonName"
-                android:text="Name" />
+                android:text="Notiz1" />
 
             <Button
                 android:id="@+id/button9"
