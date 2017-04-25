@@ -3,49 +3,48 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="layout.content_einstellungen">
+    tools:context="layout.content_ueber_die_app">
 
+    <!-- TODO: Update blank fragment layout -->
 
     <android.support.constraint.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-
         <TextView
-            android:id="@+id/textView8"
+            android:id="@+id/textView14"
             android:layout_width="250dp"
             android:layout_height="44dp"
-            android:text="Einstellungen"
+            android:text="Version 1.0"
+            android:textSize="18sp"
+            tools:layout_editor_absoluteX="16dp"
+            tools:layout_editor_absoluteY="188dp" />
+
+        <TextView
+            android:id="@+id/textView13"
+            android:layout_width="250dp"
+            android:layout_height="44dp"
+            android:text="HealthCare Oranisation"
+            android:textSize="18sp"
+            tools:layout_editor_absoluteX="16dp"
+            tools:layout_editor_absoluteY="73dp" />
+
+        <TextView
+            android:id="@+id/textView9"
+            android:layout_width="250dp"
+            android:layout_height="44dp"
+            android:text="Über die App"
             android:textSize="22sp"
             tools:layout_editor_absoluteX="16dp"
-            tools:layout_editor_absoluteY="36dp" />
+            tools:layout_editor_absoluteY="16dp" />
 
         <TextView
-            android:id="@+id/textView7"
+            android:id="@+id/textView12"
             android:layout_width="250dp"
             android:layout_height="44dp"
-            android:text="Datenschutz"
+            android:text="Erhältlich seit 01.09.2017"
             android:textSize="18sp"
             tools:layout_editor_absoluteX="16dp"
-            tools:layout_editor_absoluteY="107dp" />
-
-        <TextView
-            android:id="@+id/textView7"
-            android:layout_width="250dp"
-            android:layout_height="44dp"
-            android:text="Ton und Vibration"
-            android:textSize="18sp"
-            tools:layout_editor_absoluteX="16dp"
-            tools:layout_editor_absoluteY="176dp" />
-
-        <Switch
-            android:id="@+id/switch1"
-            android:layout_width="95dp"
-            android:layout_height="44dp"
-            android:text="Switch"
-            tools:layout_editor_absoluteX="278dp"
-            tools:layout_editor_absoluteY="176dp" />
-
-
+            tools:layout_editor_absoluteY="132dp" />
     </android.support.constraint.ConstraintLayout>
 </FrameLayout>
