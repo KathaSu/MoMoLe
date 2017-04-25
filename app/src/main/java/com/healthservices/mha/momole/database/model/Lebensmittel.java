@@ -41,7 +41,5 @@ public class Lebensmittel {
 
         public String getHis() { return his; }
         public void setHis(String his) { this.his = his; }
-
-
     }
 }
