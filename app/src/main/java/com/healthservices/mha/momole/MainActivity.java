@@ -23,10 +23,10 @@ import android.os.Build;
 import android.preference.PreferenceManager;
 import android.support.annotation.RequiresApi;
 import android.widget.Toast;
+import br.com.app.R;
 
 
-public class MainActivity extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener {
+public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
     private Fragment currentFragment;
 
     @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN)
