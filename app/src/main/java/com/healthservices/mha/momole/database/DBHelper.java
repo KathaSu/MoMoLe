@@ -7,9 +7,9 @@ import android.database.sqlite.SQLiteOpenHelper;
  * Created by manji on 25.04.2017.
  */
 
-public class DBHelper extends SQLiteOpenHelper {
+public class DBHelper {
 
-    public static final String TAG = "DBHelper"
+    public static final String TAG = "DBHelper";
 
     public static final String TBL_LM = "lebensmittel";
     public static final String TBL_LM_ID = "id";
