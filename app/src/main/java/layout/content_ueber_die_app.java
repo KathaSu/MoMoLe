@@ -13,12 +13,12 @@ import com.healthservices.mha.momole.R;
 /**
  * A simple {@link Fragment} subclass.
  * Activities that contain this fragment must implement the
- * {@link content_einstellungen.OnFragmentInteractionListener} interface
+ * {@link content_ueber_die_app.OnFragmentInteractionListener} interface
  * to handle interaction events.
- * Use the {@link content_einstellungen#newInstance} factory method to
+ * Use the {@link content_ueber_die_app#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class content_einstellungen extends Fragment {
+public class content_ueber_die_app extends Fragment {
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -30,7 +30,7 @@ public class content_einstellungen extends Fragment {
 
     private OnFragmentInteractionListener mListener;
 
-    public content_einstellungen() {
+    public content_ueber_die_app() {
         // Required empty public constructor
     }
 
@@ -40,11 +40,11 @@ public class content_einstellungen extends Fragment {
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
-     * @return A new instance of fragment content_einstellungen.
+     * @return A new instance of fragment content_ueber_die_app.
      */
     // TODO: Rename and change types and number of parameters
-    public static content_einstellungen newInstance(String param1, String param2) {
-        content_einstellungen fragment = new content_einstellungen();
+    public static content_ueber_die_app newInstance(String param1, String param2) {
+        content_ueber_die_app fragment = new content_ueber_die_app();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -65,7 +65,7 @@ public class content_einstellungen extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_content_einstellungen, container, false);
+        return inflater.inflate(R.layout.fragment_content_ueber_die_app, container, false);
     }
 
     // TODO: Rename method, update argument and hook method into UI event

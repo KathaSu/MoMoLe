@@ -1,0 +1,73 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="layout.content_faq">
+
+    <!-- TODO: Update blank fragment layout -->
+
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/textView9"
+            android:layout_width="160dp"
+            android:layout_height="62dp"
+            android:text="FAQs"
+            android:textSize="50sp"
+            android:gravity="center_horizontal|center_vertical"
+            tools:layout_editor_absoluteX="112dp"
+            tools:layout_editor_absoluteY="16dp" />
+
+        <TextView
+            android:id="@+id/textView10"
+            android:layout_width="349dp"
+            android:layout_height="50dp"
+            android:text="Welche Lebensmittel gehören zu welchen Allergengruppen?"
+            android:textSize="20sp"
+            tools:layout_editor_absoluteX="16dp"
+            tools:layout_editor_absoluteY="112dp" />
+
+        <TextView
+            android:id="@+id/textView11"
+            android:layout_width="284dp"
+            android:layout_height="50dp"
+            android:text="Welche Beschwerden lassen \nsich erfassen?"
+            android:textSize="20sp"
+            tools:layout_editor_absoluteX="16dp"
+            tools:layout_editor_absoluteY="177dp" />
+
+        <TextView
+            android:id="@+id/textView12"
+            android:layout_width="247dp"
+            android:layout_height="49dp"
+            android:text="Was sind Lebensmittel- \nunverträglichkeiten?"
+            android:textSize="20sp"
+            tools:layout_editor_absoluteX="16dp"
+            tools:layout_editor_absoluteY="241dp" />
+
+        <TextView
+            android:id="@+id/textView13"
+            android:layout_width="356dp"
+            android:layout_height="44dp"
+            android:text="Wo kann man Medikamente eingeben?"
+            android:textSize="20sp"
+            tools:layout_editor_absoluteX="14dp"
+            tools:layout_editor_absoluteY="304dp" />
+
+        <TextView
+            android:id="@+id/textView14"
+            android:layout_width="357dp"
+            android:layout_height="44dp"
+            android:text="Wann sollte man einen Arzt aufsuchen?"
+            android:textSize="20sp"
+            tools:layout_editor_absoluteY="362dp"
+            tools:layout_editor_absoluteX="14dp" />
+
+    </android.support.constraint.ConstraintLayout>
+
+
+</FrameLayout>

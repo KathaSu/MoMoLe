@@ -7,27 +7,18 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
-import java.text.DateFormat;
-import java.util.Date;
-
-
-import java.util.Date;
-import java.text.SimpleDateFormat;
 
 import com.healthservices.mha.momole.R;
-
-import java.sql.Timestamp;
 
 /**
  * A simple {@link Fragment} subclass.
  * Activities that contain this fragment must implement the
- * {@link content_datumsanzeige.OnFragmentInteractionListener} interface
+ * {@link content_auswertung.OnFragmentInteractionListener} interface
  * to handle interaction events.
- * Use the {@link content_datumsanzeige#newInstance} factory method to
+ * Use the {@link content_auswertung#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class content_datumsanzeige extends Fragment {
+public class content_auswertung extends Fragment {
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -39,19 +30,21 @@ public class content_datumsanzeige extends Fragment {
 
     private OnFragmentInteractionListener mListener;
 
+    public content_auswertung() {
+        // Required empty public constructor
+    }
+
     /**
      * Use this factory method to create a new instance of
      * this fragment using the provided parameters.
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
-     * @return A new instance of fragment content_datumsanzeige.
+     * @return A new instance of fragment content_auswertung.
      */
-
-
     // TODO: Rename and change types and number of parameters
-    public static content_datumsanzeige newInstance(String param1, String param2) {
-        content_datumsanzeige fragment = new content_datumsanzeige();
+    public static content_auswertung newInstance(String param1, String param2) {
+        content_auswertung fragment = new content_auswertung();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -62,15 +55,18 @@ public class content_datumsanzeige extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        if (getArguments() != null) {
+            mParam1 = getArguments().getString(ARG_PARAM1);
+            mParam2 = getArguments().getString(ARG_PARAM2);
+        }
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_content_datumsanzeige, container, false);
+        return inflater.inflate(R.layout.fragment_content_auswertung, container, false);
     }
-
 
     // TODO: Rename method, update argument and hook method into UI event
     public void onButtonPressed(Uri uri) {
@@ -109,9 +105,5 @@ public class content_datumsanzeige extends Fragment {
     public interface OnFragmentInteractionListener {
         // TODO: Update argument type and name
         void onFragmentInteraction(Uri uri);
-    }
-
-    public class currentDate {
-
     }
 }
