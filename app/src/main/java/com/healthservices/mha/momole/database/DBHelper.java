@@ -4,11 +4,12 @@ import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
+
 /**
  * Created by manji on 25.04.2017.
  */
 
-public class DBHelper{
+public class DBHelper extends SQLiteOpenHelper{
 
     private static final String DATABASE_NAME = "momole.db";
     private static final int DATABASE_VERSION = 1;
