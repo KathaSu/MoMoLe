@@ -92,7 +92,7 @@ public class LebensmittelDAO {
         open();
 
         Cursor cursor = database.query(TBL_LM, //Table
-                new String[] {TBL_LM_ID, TBL_LM_TIME, TBL_LM_DESCRIPTION, TBL_LM_LACTOSE, TBL_LM_GLUTEN, TBL_LM_FRUCTOSE, TBL_LM_HISTAMIN}, //Fields, null would also return all columns / fields
+                new String[]{TBL_LM_ID, TBL_LM_TIME, TBL_LM_DESCRIPTION, TBL_LM_LACTOSE, TBL_LM_GLUTEN, TBL_LM_FRUCTOSE, TBL_LM_HISTAMIN}, //Fields, null would also return all columns / fields
                 null, //Selection (WHERE [field]=?)
                 null, //Selection arguments (replaces ? in Selection)
                 null, //GroupBy (GROUPY BY [field], e. g. in case of sum([field]))

@@ -185,5 +185,4 @@ public class BeschwerdenDAO {
 
             return beschwerden;
         }
-
 }
