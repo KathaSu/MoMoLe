@@ -10,8 +10,7 @@ import java.util.LinkedList;
 import java.util.List;
 
 import com.healthservices.mha.momole.database.model.Beschwerden;
-import com.healthservices.mha.momole.database.model.Lebensmittel;
-import com.healthservices.mha.momole.database.model.Notizen;
+
 
 /**
  * Created by manji on 25.04.2017.
@@ -54,6 +53,7 @@ public class BeschwerdenDAO {
     }
 
     private BeschwerdenDAO(Context context){
+
         dbHelper = DBHelper.getInstance(context);
     }
 
@@ -63,10 +63,12 @@ public class BeschwerdenDAO {
     }
 
     public void close(){
+
         dbHelper.close();
     }
 
     public void onCreate(SQLiteDatabase database){
+
         database.execSQL(CREATE_TBL_B);
     }
 
