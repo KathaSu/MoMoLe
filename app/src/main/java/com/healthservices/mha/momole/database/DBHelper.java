@@ -9,14 +9,14 @@ import android.database.sqlite.SQLiteOpenHelper;
  * Created by manji on 25.04.2017.
  */
 
-public class DBHelper extends SQLiteOpenHelper{
+ public class DBHelper extends SQLiteOpenHelper{
 
     private static final String DATABASE_NAME = "momole.db";
     private static final int DATABASE_VERSION = 1;
     private static DBHelper instance;
 
     private DBHelper(Context context, SQLiteDatabase.CursorFactory factory){
-        super((context, DATABASE_NAME, factory, DATABASE_VERSION);
+        super(context, DATABASE_NAME, factory, DATABASE_VERSION);
     }
 
     public static DBHelper getInstance(Context context){
@@ -34,7 +34,7 @@ public class DBHelper extends SQLiteOpenHelper{
     }
 
     @Override
-    public void onUpgrade(SQLiteDatabase database, int oldVersion, in newVersion){
+    public void onUpgrade(SQLiteDatabase database, int oldVersion, int newVersion){
         LebensmittelDAO.getInstance(null).onUpgrade(database, oldVersion, newVersion);
         BeschwerdenDAO.getInstance(null).onUpgrade(database, oldVersion, newVersion);
         NotizenDAO.getInstance(null).onUpgrade(database, oldVersion, newVersion);

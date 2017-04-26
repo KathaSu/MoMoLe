@@ -44,7 +44,7 @@ public class BeschwerdenDAO {
     private DBHelper dbHelper;
     private SQLiteDatabase database;
 
-    public BeschwerdenDAO getInstance(Context context){
+    public static BeschwerdenDAO getInstance(Context context){
         if (instance == null){
             instance = new BeschwerdenDAO(context);
         }
