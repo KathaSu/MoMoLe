@@ -145,10 +145,10 @@ public class LebensmittelDAO {
 
         contentValues.put(TBL_LM_DESCRIPTION, lebensmittel.getDes());
         contentValues.put(TBL_LM_TIME, lebensmittel.getTime());
-        contentValues.put (TBL_LM_LACTOSE, lebensmittel.getLac));
-        contentValues.put(TBL_LM_GLUTEN, lebensmittel.getGlu));
-        contentValues.put(TBL_LM_FRUCTOSE, lebensmittel.getFru));
-        contentValues.put(TBL_LM_HISTAMIN, lebensmittel.getHis));
+        contentValues.put(TBL_LM_LACTOSE, lebensmittel.getLac());
+        contentValues.put(TBL_LM_GLUTEN, lebensmittel.getGlu());
+        contentValues.put(TBL_LM_FRUCTOSE, lebensmittel.getFru());
+        contentValues.put(TBL_LM_HISTAMIN, lebensmittel.getHis());
 
         return contentValues;
     }
@@ -179,5 +179,4 @@ public class LebensmittelDAO {
 
         return lebensmittel;
     }
-}
 }
