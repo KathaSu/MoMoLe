@@ -7,7 +7,6 @@ import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 
 import com.healthservices.mha.momole.database.model.Lebensmittel;
-import com.healthservices.mha.momole.database.model.Notizen;
 
 import java.util.LinkedList;
 import java.util.List;
@@ -52,6 +51,7 @@ public class LebensmittelDAO {
     }
 
     private LebensmittelDAO(Context context){
+
         dbHelper = DBHelper.getInstance(context);
     }
 
@@ -60,10 +60,12 @@ public class LebensmittelDAO {
     }
 
     public void close(){
+
         dbHelper.close();
     }
 
     public void onCreate(SQLiteDatabase database){
+
         database.execSQL(CREATE_TBL_LM);
     }
 
