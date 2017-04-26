@@ -7,6 +7,7 @@ import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 
 import com.healthservices.mha.momole.database.model.Lebensmittel;
+import com.healthservices.mha.momole.database.model.Notizen;
 
 import java.util.LinkedList;
 import java.util.List;
@@ -68,6 +69,28 @@ public class LebensmittelDAO {
 
     public void onUpgrade(SQLiteDatabase database, int oldVersion, int newVersion){
 
+    }
+
+    public List<Lebensmittel> getAllLebensmittelAfter(long timestamp) {
+        open();
+        Cursor cursor = database.query(TBL_LM, //Table
+                new String[] {TBL_LM_ID, TBL_LM_DESCRIPTION, TBL_LM_LACTOSE, TBL_LM_GLUTEN, TBL_LM_FRUCTOSE, TBL_LM_HISTAMIN, TBL_LM_TIME}, //Fields, null would also return all columns / fields
+                TBL_LM_TIME + ">=" + timestamp, //Selection, can't do >= with selection arguments
+                null, //Selection arguments (replaces ? in Selection)
+                null, //GroupBy (GROUPY BY [field], e. g. in case of sum([field]))
+                null, //Having, Selection on Group By fields (HAVING [field]=1)
+                null, //Limit, limits the selection, e. g. 10 for 10 entries
+                TBL_LM_TIME + " ASC"); //Order by timestamp, ascending
+        List<Lebensmittel> lebensmittel = new LinkedList<>();
+        if (cursor.moveToFirst()) { // read in the the result row by row, if data available
+            while (!cursor.isAfterLast()) {
+                lebensmittel.add(readFromCursor(cursor));
+                cursor.moveToNext();
+            }
+        }
+        cursor.close();
+        close();
+        return lebensmittel;
     }
 
     public Lebensmittel getLebensmittel(long id) {

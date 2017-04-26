@@ -79,6 +79,28 @@ public class NotizenDAO {
             return null;
         }
 
+    public List<Notizen> getAllNotizenAfter(long timestamp) {
+        open();
+        Cursor cursor = database.query(TBL_N, //Table
+                new String[] {TBL_N_ID, TBL_N_DESCRIPTION, TBL_N_TIME}, //Fields, null would also return all columns / fields
+                TBL_N_TIME + ">=" + timestamp, //Selection, can't do >= with selection arguments
+                null, //Selection arguments (replaces ? in Selection)
+                null, //GroupBy (GROUPY BY [field], e. g. in case of sum([field]))
+                null, //Having, Selection on Group By fields (HAVING [field]=1)
+                null, //Limit, limits the selection, e. g. 10 for 10 entries
+                TBL_N_TIME + " ASC"); //Order by timestamp, ascending
+        List<Notizen> notizen = new LinkedList<>();
+        if (cursor.moveToFirst()) { // read in the the result row by row, if data available
+            while (!cursor.isAfterLast()) {
+                notizen.add(readFromCursor(cursor));
+                cursor.moveToNext();
+            }
+        }
+        cursor.close();
+        close();
+        return notizen;
+    }
+
         public List<Notizen> getAllNotizen() {
             open();
 

@@ -10,6 +10,8 @@ import java.util.LinkedList;
 import java.util.List;
 
 import com.healthservices.mha.momole.database.model.Beschwerden;
+import com.healthservices.mha.momole.database.model.Lebensmittel;
+import com.healthservices.mha.momole.database.model.Notizen;
 
 /**
  * Created by manji on 25.04.2017.
@@ -88,6 +90,28 @@ public class BeschwerdenDAO {
         cursor.close();
         close();
         return null;
+    }
+
+    public List<Beschwerden> getAllBeschwerdenAfter(long timestamp) {
+        open();
+        Cursor cursor = database.query(TBL_B, //Table
+                new String[] {TBL_B_ID, TBL_B_DESCRIPTION, TBL_B_DIGESTIVPBL, TBL_B_HEADACHE, TBL_B_SKINPBL, TBL_B_RESPIDISTRESS, TBL_B_FEVER, TBL_B_TIME}, //Fields, null would also return all columns / fields
+                TBL_B_TIME + ">=" + timestamp, //Selection, can't do >= with selection arguments
+                null, //Selection arguments (replaces ? in Selection)
+                null, //GroupBy (GROUPY BY [field], e. g. in case of sum([field]))
+                null, //Having, Selection on Group By fields (HAVING [field]=1)
+                null, //Limit, limits the selection, e. g. 10 for 10 entries
+                TBL_B_TIME + " ASC"); //Order by timestamp, ascending
+        List<Beschwerden> beschwerden = new LinkedList<>();
+        if (cursor.moveToFirst()) { // read in the the result row by row, if data available
+            while (!cursor.isAfterLast()) {
+                beschwerden.add(readFromCursor(cursor));
+                cursor.moveToNext();
+            }
+        }
+        cursor.close();
+        close();
+        return beschwerden;
     }
 
     public List<Beschwerden> getAllBeschwerden() {
