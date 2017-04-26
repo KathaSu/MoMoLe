@@ -6,11 +6,10 @@ import android.database.Cursor;
 import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 
-import com.healthservices.mha.momole.database.model.Beschwerden;
-
 import java.util.LinkedList;
 import java.util.List;
 
+import com.healthservices.mha.momole.database.model.Beschwerden;
 
 /**
  * Created by manji on 25.04.2017.
@@ -146,13 +145,13 @@ public class BeschwerdenDAO {
             if (beschwerden.getId() > 0)
                 contentValues.put(TBL_B_ID, beschwerden.getId());
 
-            contentValues.put(TBL_B_DESCRIPTION, beschwerden.getDescription());
+            contentValues.put(TBL_B_DESCRIPTION, beschwerden.getDes());
             contentValues.put(TBL_B_TIME, beschwerden.getTime());
-            contentValues.put(TBL_B_DIGESTIVPBL, beschwerden.getDigestivpbl());
-            contentValues.put(TBL_B_HEADACHE, beschwerden.getHeadache());
-            contentValues.put(TBL_B_SKINPBL, beschwerden.getSkinpbl());
-            contentValues.put(TBL_B_RESPIDISTRESS, beschwerden.getRespidistress());
-            contentValues.put(TBL_B_FEVER, beschwerden.getFever());
+            contentValues.put(TBL_B_DIGESTIVPBL, beschwerden.getDige());
+            contentValues.put(TBL_B_HEADACHE, beschwerden.getHead());
+            contentValues.put(TBL_B_SKINPBL, beschwerden.getSkin());
+            contentValues.put(TBL_B_RESPIDISTRESS, beschwerden.getResp());
+            contentValues.put(TBL_B_FEVER, beschwerden.getFev());
 
             return contentValues;
         }
