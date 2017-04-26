@@ -93,7 +93,7 @@ public class LebensmittelDAO {
         open();
 
         Cursor cursor = database.query(TBL_LM, //Table
-                new String[] {TBL_LM_ID, TBL_LM_TIME, TBL_LM_DESCRIPTION, TBL_LM_LACTOSE, TBL_LM_GLUTEN, TBL_LM_FRUCTOSE, TBL_LM_HISTAMIN,}, //Fields, null would also return all columns / fields
+                new String[] {TBL_LM_ID, TBL_LM_TIME, TBL_LM_DESCRIPTION, TBL_LM_LACTOSE, TBL_LM_GLUTEN, TBL_LM_FRUCTOSE, TBL_LM_HISTAMIN}, //Fields, null would also return all columns / fields
                 null, //Selection (WHERE [field]=?)
                 null, //Selection arguments (replaces ? in Selection)
                 null, //GroupBy (GROUPY BY [field], e. g. in case of sum([field]))
@@ -144,12 +144,12 @@ public class LebensmittelDAO {
         if (lebensmittel.getId() > 0)
             contentValues.put(TBL_LM_ID, lebensmittel.getId());
 
-        contentValues.put(TBL_LM_DESCRIPTION, lebensmittel.getDescription());
+        contentValues.put(TBL_LM_DESCRIPTION, lebensmittel.getDes());
         contentValues.put(TBL_LM_TIME, lebensmittel.getTime());
-        contentValues.put(TBL_LM_LACTOSE, lebensmittel.getLactose());
-        contentValues.put(TBL_LM_GLUTEN, lebensmittel.getGluten());
-        contentValues.put(TBL_LM_FRUCTOSE, lebensmittel.getFructose());
-        contentValues.put(TBL_LM_HISTAMIN, lebensmittel.getHistamin());
+        contentValues.put(TBL_LM_LACTOSE, lebensmittel.getLac());
+        contentValues.put(TBL_LM_GLUTEN, lebensmittel.getGlu());
+        contentValues.put(TBL_LM_FRUCTOSE, lebensmittel.getFru());
+        contentValues.put(TBL_LM_HISTAMIN, lebensmittel.getHis());
 
         return contentValues;
     }
