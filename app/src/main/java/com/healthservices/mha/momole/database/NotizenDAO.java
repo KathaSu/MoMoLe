@@ -30,7 +30,7 @@ public class NotizenDAO {
             + TBL_N_DESCRIPTION + " TEXT "
             + ");";
 
-        private static com.healthservices.mha.momole.database.BeschwerdenDAO instance;
+        private static NotizenDAO instance;
         private DBHelper dbHelper;
         private SQLiteDatabase database;
 
@@ -61,7 +61,7 @@ public class NotizenDAO {
 
         }
 
-        public Beschwerden getNotizen(long id) {
+        public Notizen getNotizen(long id) {
             open();
             Cursor cursor = database.query(TBL_N, //Table
                     null, //null returns all columns / fields
@@ -83,7 +83,7 @@ public class NotizenDAO {
             open();
 
             Cursor cursor = database.query(TBL_N, //Table
-                    new String[] {TBL_N_ID, TBL_N_TIME, TBL_N_DESCRIPTION,}, //Fields, null would also return all columns / fields
+                    new String[] {TBL_N_ID, TBL_N_TIME, TBL_N_DESCRIPTION}, //Fields, null would also return all columns / fields
                     null, //Selection (WHERE [field]=?)
                     null, //Selection arguments (replaces ? in Selection)
                     null, //GroupBy (GROUPY BY [field], e. g. in case of sum([field]))
@@ -134,7 +134,7 @@ public class NotizenDAO {
             if (notizen.getId() > 0)
                 contentValues.put(TBL_N_ID, notizen.getId());
 
-            contentValues.put(TBL_N_DESCRIPTION, notizen.getDescription());
+            contentValues.put(TBL_N_DESCRIPTION, notizen.getDes());
             contentValues.put(TBL_N_TIME, notizen.getTime());
 
             return contentValues;
