@@ -56,8 +56,9 @@ public class BeschwerdenDAO {
         dbHelper = DBHelper.getInstance(context);
     }
 
-    public void open() throws SQLException{
-        database = dbHelper.getWritableDatabase();
+    public void open() throws SQLException {
+         database = dbHelper.getWritableDatabase();
+
     }
 
     public void close(){
