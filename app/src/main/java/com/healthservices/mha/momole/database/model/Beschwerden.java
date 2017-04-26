@@ -44,4 +44,5 @@ public class Beschwerden {
 
     public String getFev() { return fev; }
     public void setFev(String fev) { this.fev = fev; }
+
 }
