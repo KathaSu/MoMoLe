@@ -120,7 +120,7 @@ public class BeschwerdenDAO {
         open();
 
         Cursor cursor = database.query(TBL_B, //Table
-                new String[] {TBL_B_ID, TBL_B_TIME, TBL_B_DESCRIPTION, TBL_B_DIGESTIVPBL, TBL_B_HEADACHE, TBL_B_SKINPBL, TBL_B_RESPIDISTRESS, TBL_B_FEVER}, //Fields, null would also return all columns / fields
+                new String[]{TBL_B_ID, TBL_B_TIME, TBL_B_DESCRIPTION, TBL_B_DIGESTIVPBL, TBL_B_HEADACHE, TBL_B_SKINPBL, TBL_B_RESPIDISTRESS, TBL_B_FEVER}, //Fields, null would also return all columns / fields
                 null, //Selection (WHERE [field]=?)
                 null, //Selection arguments (replaces ? in Selection)
                 null, //GroupBy (GROUPY BY [field], e. g. in case of sum([field]))
@@ -135,6 +135,10 @@ public class BeschwerdenDAO {
                 cursor.moveToNext();
             }
         }
+        cursor.close();
+        close();
+        return beschwerden;
+    }
 
         public long addBeschwerden(Beschwerden beschwerden) {
             open();

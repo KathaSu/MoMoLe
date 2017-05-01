@@ -132,6 +132,11 @@ public class LebensmittelDAO {
                 cursor.moveToNext();
             }
         }
+        cursor.close();
+        close();
+        return lebensmittel;
+    }
+
 
     public long addLebensmittel(Lebensmittel lebensmittel) {
         open();

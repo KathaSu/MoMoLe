@@ -120,8 +120,13 @@ public class NotizenDAO {
                     cursor.moveToNext();
                 }
             }
+            cursor.close();
+            close();
+            return notizen;
+        }
 
-        public long addNotizen(Notizen notizen) {
+
+    public long addNotizen(Notizen notizen) {
             open();
             long ret = database.insert(TBL_N, null, prepareValues(notizen));
             if (ret > 0) {
