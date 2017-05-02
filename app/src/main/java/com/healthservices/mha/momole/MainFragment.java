@@ -25,8 +25,6 @@ public class MainFragment extends Fragment {
 
     private ListView listView;
     private LebensmittelAdapter listAdapter;
-    private BeschwerdenAdapter listAdapter;
-    private NotizenAdapter listAdapter;
     //private SimpleDateFormat dateFormat = new SimpleDateFormat("dd.MM.yyyy HH:mm:ss");
 
     public MainFragment() {
@@ -54,24 +52,6 @@ public class MainFragment extends Fragment {
         listView.setAdapter(listAdapter);
 
     }
-    @Override
-    public void onViewCreated(View view, Bundle savedInstanceState) {
-        super.onViewCreated(view, savedInstanceState);
-
-        listView = (ListView) view.findViewById(R.id.mainPaymentsList);
-        listAdapter = new BeschwerdenAdapter();
-        listView.setAdapter(listAdapter);
-
-    }
-    @Override
-    public void onViewCreated(View view, Bundle savedInstanceState) {
-        super.onViewCreated(view, savedInstanceState);
-
-        listView = (ListView) view.findViewById(R.id.mainPaymentsList);
-        listAdapter = new NotizenAdapter();
-        listView.setAdapter(listAdapter);
-
-    }
 
     @Override
     public void onResume() {
@@ -87,23 +67,6 @@ public class MainFragment extends Fragment {
             lebensmittel = LebensmittelDAO.getInstance(getContext()).getAllLebensmittel();
         }
     }
-        private class BeschwerdenAdapter extends BaseAdapter {
-
-            private List<Beschwerden> beschwerden;
-
-            private BeschwerdenAdapter() {
-                beschwerden = BeschwerdenDAO.getInstance(getContext()).getAllBeschwerden();
-            }
-        }
-
-        private class NotizenAdapter extends BaseAdapter {
-
-            private List<Notizen> notizen;
-
-            private NotizenAdapter() {
-                notizen = NotizenDAO.getInstance(getContext()).getAllNotizen();
-            }
-        }
 
         /*@Override
         public Payment getItem(int position) {
