@@ -19,8 +19,8 @@ import com.healthservices.mha.momole.database.LebensmittelDAO;
 
 public class MainFragment extends Fragment {
 
-    /*private ListView listView;
-    private LebensmittelAdapter listAdapter;
+    private ListView listView;
+    //private LebensmittelAdapter listAdapter;
     private SimpleDateFormat dateFormat = new SimpleDateFormat("dd.MM.yyyy HH:mm:ss");
 
     public MainFragment() {
@@ -39,20 +39,20 @@ public class MainFragment extends Fragment {
         return inflater.inflate(R.layout.content_main, container, false);
     }
 
-    /*@Override
+    @Override
     public void onViewCreated(View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
         listView = (ListView) view.findViewById(R.id.mainPaymentsList);
-        listAdapter = new LebensmittelAdapter();
-        listView.setAdapter(listAdapter);
+        //listAdapter = new LebensmittelAdapter();
+        //listView.setAdapter(listAdapter);
 
     }
 
-    /*@Override
+    @Override
     public void onResume() {
         super.onResume();
-        listAdapter.notifyDataSetChanged();
+       // listAdapter.notifyDataSetChanged();
     }
 
     /*private class LebensmittelAdapter extends BaseAdapter {
@@ -64,7 +64,7 @@ public class MainFragment extends Fragment {
         }
     }
 }
-    /*@Override
+    @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         LayoutInflater layoutInflater = (LayoutInflater) getContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 
