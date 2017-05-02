@@ -49,9 +49,27 @@ public class MainFragment extends Fragment {
     public void onViewCreated(View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        /*listView = (ListView) view.findViewById(R.id.mainPaymentsList);
-        listAdapter = new PaymentAdapter();
-        listView.setAdapter(listAdapter);*/
+        listView = (ListView) view.findViewById(R.id.mainPaymentsList);
+        listAdapter = new LebensmittelAdapter();
+        listView.setAdapter(listAdapter);
+
+    }
+    @Override
+    public void onViewCreated(View view, Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+
+        listView = (ListView) view.findViewById(R.id.mainPaymentsList);
+        listAdapter = new BeschwerdenAdapter();
+        listView.setAdapter(listAdapter);
+
+    }
+    @Override
+    public void onViewCreated(View view, Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+
+        listView = (ListView) view.findViewById(R.id.mainPaymentsList);
+        listAdapter = new NotizenAdapter();
+        listView.setAdapter(listAdapter);
 
     }
 
