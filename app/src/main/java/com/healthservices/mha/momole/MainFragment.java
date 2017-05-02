@@ -17,9 +17,9 @@ import com.healthservices.mha.momole.database.LebensmittelDAO;
 
 
 
-/*public class MainFragment extends Fragment {
+public class MainFragment extends Fragment {
 
-    private ListView listView;
+    /*private ListView listView;
     private LebensmittelAdapter listAdapter;
     private SimpleDateFormat dateFormat = new SimpleDateFormat("dd.MM.yyyy HH:mm:ss");
 
@@ -93,3 +93,4 @@ import com.healthservices.mha.momole.database.LebensmittelDAO;
     private String formatDate(long timestamp) {
         return dateFormat.format(new Date(timestamp));
     }}*/
+}
