@@ -27,6 +27,8 @@ import java.sql.Timestamp;
  * Use the {@link content_datumsanzeige#newInstance} factory method to
  * create an instance of this fragment.
  */
+
+
 public class content_datumsanzeige extends Fragment {
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -111,7 +113,15 @@ public class content_datumsanzeige extends Fragment {
         void onFragmentInteraction(Uri uri);
     }
 
-    public class currentDate {
+    @Override
+    public void onViewCreated(final View view, Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
 
+        TextView datum = (TextView) view.findViewById(R.id.datumsauswahl);
+        Date now = new Date();
+        DateFormat df = DateFormat.getDateInstance(DateFormat.Long);
+        String today = df.format(now);
+        datum.setText(today);
     }
+
 }
