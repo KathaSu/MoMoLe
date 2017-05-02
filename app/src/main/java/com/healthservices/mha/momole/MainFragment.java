@@ -68,19 +68,24 @@ public class MainFragment extends Fragment {
         private LebensmittelAdapter() {
             lebensmittel = LebensmittelDAO.getInstance(getContext()).getAllLebensmittel();
         }
+    }
         private class BeschwerdenAdapter extends BaseAdapter {
-        private List<Beschwerden> beschwerden;
 
-        private BeschwerdenAdapter() {
-            beschwerden = BeschwerdenDAO.getInstance(getContext()).getAllBeschwerden();
+            private List<Beschwerden> beschwerden;
+
+            private BeschwerdenAdapter() {
+                beschwerden = BeschwerdenDAO.getInstance(getContext()).getAllBeschwerden();
+            }
         }
+
         private class NotizenAdapter extends BaseAdapter {
-        private List<Notizen> notizen;
 
-        private LebensmittelAdapter() {
-            notizen = NotizenDAO.getInstance(getContext()).getAllNotizen();
+            private List<Notizen> notizen;
+
+            private NotizenAdapter() {
+                notizen = NotizenDAO.getInstance(getContext()).getAllNotizen();
+            }
         }
-
 
         /*@Override
         public Payment getItem(int position) {
