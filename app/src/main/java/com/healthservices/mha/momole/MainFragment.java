@@ -92,4 +92,4 @@ public class MainFragment extends Fragment {
 
     private String formatDate(long timestamp) {
         return dateFormat.format(new Date(timestamp));
-    }
+    }}*/
