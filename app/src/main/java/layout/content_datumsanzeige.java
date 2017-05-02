@@ -119,9 +119,9 @@ public class content_datumsanzeige extends Fragment {
 
         TextView datum = (TextView) view.findViewById(R.id.datumsauswahl);
         Date now = new Date();
-        DateFormat df = DateFormat.getDateInstance(DateFormat.Long);
-        String today = df.format(now);
-        datum.setText(today);
+       // DateFormat df = DateFormat.getDateInstance(DateFormat.Long);
+       // String today = df.format(now);
+      //  datum.setText(today);
     }
 
 }
