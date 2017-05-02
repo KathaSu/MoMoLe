@@ -15,7 +15,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 tools:layout_editor_absoluteY="0dp"
-                tools:layout_editor_absoluteX="0dp">
+                tools:layout_editor_absoluteX="0dp" >
 
                 <!-- <TimePicker
                      android:id="@+id/timePicker"
@@ -120,54 +120,54 @@
                        tools:layout_editor_absoluteX="108dp"
                        tools:layout_editor_absoluteY="741dp" /> -->
 
-                   <ImageView
-                       android:id="@+id/imageView3"
-                       android:layout_width="41dp"
-                       android:layout_height="44dp"
-                <!-- app:srcCompat="@mipmap/_thumb_10209" Wir haben keinen mimap Ordner
-                 und auch im drawable Ordner ist kein BIld mit dem Namen thumb_10209 zu finden -->
+                <!-- <ImageView
+                     android:id="@+id/imageView3"
+                     android:layout_width="41dp"
+                     android:layout_height="44dp"
+              <!- app:srcCompat="@mipmap/_thumb_10209" Wir haben keinen mimap Ordner
+               und auch im drawable Ordner ist kein BIld mit dem Namen thumb_10209 zu finden ->
                        tools:layout_editor_absoluteX="41dp"
-                       tools:layout_editor_absoluteY="433dp" />
+                       tools:layout_editor_absoluteY="433dp" /> -->
 
-                   <ImageView
-                       android:id="@+id/imageView4"
-                       android:layout_width="41dp"
-                       android:layout_height="44dp"
-                <!--  app:srcCompat="@mipmap/_thumb_10212" -->
-                  tools:layout_editor_absoluteX="41dp"
-                  tools:layout_editor_absoluteY="348dp" />
+                <!-- <ImageView
+                     android:id="@+id/imageView4"
+                     android:layout_width="41dp"
+                     android:layout_height="44dp"
+              <!-  app:srcCompat="@mipmap/_thumb_10212" ->
+                tools:layout_editor_absoluteX="41dp"
+                tools:layout_editor_absoluteY="348dp" />-->
 
-              <ImageView
-                  android:id="@+id/imageView6"
-                  android:layout_width="41dp"
-                  android:layout_height="44dp"
-                <!-- app:srcCompat="@mipmap/_thumb_10214" -->
-                 tools:layout_editor_absoluteX="41dp"
-                 tools:layout_editor_absoluteY="520dp" />
+                <!-- <ImageView
+                     android:id="@+id/imageView6"
+                     android:layout_width="41dp"
+                     android:layout_height="44dp"
+                    app:srcCompat="@mipmap/_thumb_10214"
+                      tools:layout_editor_absoluteX="41dp"
+                      tools:layout_editor_absoluteY="520dp" /> -->
 
-             <ImageView
-                 android:id="@+id/imageView7"
-                 android:layout_width="41dp"
-                 android:layout_height="44dp"
-                <!--    app:srcCompat="@mipmap/_thumb_10213" -->
+                <!--  <ImageView
+                      android:id="@+id/imageView7"
+                      android:layout_width="41dp"
+                      android:layout_height="44dp"
+                        app:srcCompat="@mipmap/_thumb_10213"
                     tools:layout_editor_absoluteX="41dp"
-                    tools:layout_editor_absoluteY="694dp" />
+                    tools:layout_editor_absoluteY="694dp" /> -->
 
-                <ImageView
-                    android:id="@+id/imageView8"
-                    android:layout_width="41dp"
-                    android:layout_height="44dp"
-                <!--    app:srcCompat="@mipmap/_thumb_10215" -->
-                    tools:layout_editor_absoluteX="41dp"
-                    tools:layout_editor_absoluteY="610dp" />
+                <!-- <ImageView
+                     android:id="@+id/imageView8"
+                     android:layout_width="41dp"
+                     android:layout_height="44dp"
+                    app:srcCompat="@mipmap/_thumb_10215"
+                     tools:layout_editor_absoluteX="41dp"
+                     tools:layout_editor_absoluteY="610dp" /> -->
 
-                <!--   <Button
-                       android:id="@+id/button"
-                       android:layout_width="wrap_content"
-                       android:layout_height="wrap_content"
-                       android:text="Speichern"
-                       tools:layout_editor_absoluteX="143dp"
-                       tools:layout_editor_absoluteY="804dp" /> -->
+                 <!--   <Button
+                        android:id="@+id/button"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Speichern"
+                        tools:layout_editor_absoluteX="143dp"
+                        tools:layout_editor_absoluteY="804dp" /> -->
 
                </android.support.constraint.ConstraintLayout>
 
