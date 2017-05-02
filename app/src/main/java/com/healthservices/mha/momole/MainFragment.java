@@ -21,7 +21,7 @@ public class MainFragment extends Fragment {
 
     private ListView listView;
     private LebensmittelAdapter listAdapter;
-    //private SimpleDateFormat dateFormat = new SimpleDateFormat("dd.MM.yyyy HH:mm:ss");
+    private SimpleDateFormat dateFormat = new SimpleDateFormat("dd.MM.yyyy HH:mm:ss");
 
     public MainFragment() {
         // Required empty public constructor
