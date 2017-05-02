@@ -4,8 +4,9 @@ import android.app.FragmentManager;
 import android.app.FragmentTransaction;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.view.LayoutInflater;
+import android.support.design.widget.Snackbar;
+
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -128,7 +129,3 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         return true;
     }
 }
-
-    /**
-     * Created by Christoph Englich on 19.03.17.
-     */

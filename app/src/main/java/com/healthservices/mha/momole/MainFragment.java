@@ -20,9 +20,6 @@ import com.healthservices.mha.momole.database.BeschwerdenDAO;
 import com.healthservices.mha.momole.database.LebensmittelDAO;
 import com.healthservices.mha.momole.database.NotizenDAO;
 
-/**
- * Created by Christoph Englich on 19.03.17.
- */
 
 public class MainFragment extends Fragment {
 
@@ -62,7 +59,7 @@ public class MainFragment extends Fragment {
         //listAdapter.notifyDataSetChanged();
     }
 
-    /*private class PaymentAdapter extends BaseAdapter {
+    /*private class PaymAdapter extends BaseAdapter {
 
         private List<Payment> payments;
 
