@@ -18,8 +18,6 @@ import android.app.Fragment;
 import android.os.Build;
 import android.support.annotation.RequiresApi;
 import android.view.ViewGroup;
-import android.widget.BaseAdapter;
-import android.widget.ListView;
 
 import android.view.Menu;
 import android.view.MenuItem;
