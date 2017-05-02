@@ -23,8 +23,10 @@ import com.healthservices.mha.momole.database.NotizenDAO;
 
 public class MainFragment extends Fragment {
 
-    //private ListView listView;
-    //private PaymentAdapter listAdapter;
+    private ListView listView;
+    private LebensmittelAdapter listAdapter;
+    private BeschwerdenAdapter listAdapter;
+    private NotizenAdapter listAdapter;
     //private SimpleDateFormat dateFormat = new SimpleDateFormat("dd.MM.yyyy HH:mm:ss");
 
     public MainFragment() {
@@ -59,20 +61,28 @@ public class MainFragment extends Fragment {
         //listAdapter.notifyDataSetChanged();
     }
 
-    /*private class PaymAdapter extends BaseAdapter {
+    private class LebensmittelAdapter extends BaseAdapter {
 
-        private List<Payment> payments;
+        private List<Lebensmittel> lebensmittel;
 
-        private PaymentAdapter() {
-            payments = PaymentDAO.getInstance(getContext()).getAllPayments();
+        private LebensmittelAdapter() {
+            lebensmittel = LebensmittelDAO.getInstance(getContext()).getAllLebensmittel();
+        }
+        private class BeschwerdenAdapter extends BaseAdapter {
+        private List<Beschwerden> beschwerden;
+
+        private BeschwerdenAdapter() {
+            beschwerden = BeschwerdenDAO.getInstance(getContext()).getAllBeschwerden();
+        }
+        private class NotizenAdapter extends BaseAdapter {
+        private List<Notizen> notizen;
+
+        private LebensmittelAdapter() {
+            notizen = NotizenDAO.getInstance(getContext()).getAllNotizen();
         }
 
-        @Override
-        public int getCount() {
-            return payments.size();
-        }
 
-        @Override
+        /*@Override
         public Payment getItem(int position) {
             return payments.get(position);
         }
