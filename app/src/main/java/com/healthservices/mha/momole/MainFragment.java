@@ -13,12 +13,9 @@ import android.widget.TextView;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
-import com.healthservices.mha.momole.database.model.Beschwerden;
 import com.healthservices.mha.momole.database.model.Lebensmittel;
-import com.healthservices.mha.momole.database.model.Notizen;
-import com.healthservices.mha.momole.database.BeschwerdenDAO;
 import com.healthservices.mha.momole.database.LebensmittelDAO;
-import com.healthservices.mha.momole.database.NotizenDAO;
+
 
 
 public class MainFragment extends Fragment {
@@ -68,35 +65,33 @@ public class MainFragment extends Fragment {
         }
     }
 
-        @Override
-        public View getView(int position, View convertView, ViewGroup parent) {
-            LayoutInflater layoutInflater = (LayoutInflater) getContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+    @Override
+    public View getView(int position, View convertView, ViewGroup parent) {
+        LayoutInflater layoutInflater = (LayoutInflater) getContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 
-            if (convertView == null)
-                convertView = layoutInflater.inflate(R.layout.row_payment, null);
+        if (convertView == null)
+            convertView = layoutInflater.inflate(R.layout.row_payment, null);
 
-            TextView category = (TextView) convertView.findViewById(R.id.rowPaymentCategory);
-            TextView time = (TextView) convertView.findViewById(R.id.rowPaymentTime);
-            TextView amount = (TextView) convertView.findViewById(R.id.rowPaymentAmount);
+        TextView category = (TextView) convertView.findViewById(R.id.rowPaymentCategory);
+        TextView time = (TextView) convertView.findViewById(R.id.rowPaymentTime);
+        TextView amount = (TextView) convertView.findViewById(R.id.rowPaymentAmount);
 
-            Payment payment = getItem(position);
+        Payment payment = getItem(position);
 
-            category.setText(payment.getCategory());
-            time.setText(formatDate(payment.getTime()));
-            amount.setText(String.valueOf(payment.getAmount()));
+        category.setText(payment.getCategory());
+        time.setText(formatDate(payment.getTime()));
+        amount.setText(String.valueOf(payment.getAmount()));
 
-            return convertView;
-        }
+        return convertView;
+    }
 
-        @Override
-        public void notifyDataSetChanged() {
-            lebensmittel = LebensmittelDAO.getInstance(getContext()).getAllLebensmittel();
-            super.notifyDataSetChanged();
-        }
+    @Override
+    public void notifyDataSetChanged() {
+        lebensmittel = LebensmittelDAO.getInstance(getContext()).getAllLebensmittel();
+        super.notifyDataSetChanged();
+    }
 
-        private String formatDate(long timestamp) {
-            return dateFormat.format(new Date(timestamp));
-        }
-    }*/
-
+    private String formatDate(long timestamp) {
+        return dateFormat.format(new Date(timestamp));
+    }
 }
