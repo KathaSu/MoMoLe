@@ -59,7 +59,7 @@ public class MainFragment extends Fragment {
         //listAdapter.notifyDataSetChanged();
     }
 
-    /*private class PaymentAdapter extends BaseAdapter {
+    /*private class PaymAdapter extends BaseAdapter {
 
         private List<Payment> payments;
 
