@@ -17,7 +17,7 @@ import com.healthservices.mha.momole.database.LebensmittelDAO;
 
 
 
-public class MainFragment extends Fragment {
+/*public class MainFragment extends Fragment {
 
     private ListView listView;
     private LebensmittelAdapter listAdapter;
@@ -39,7 +39,7 @@ public class MainFragment extends Fragment {
         return inflater.inflate(R.layout.content_main, container, false);
     }
 
-    @Override
+    /*@Override
     public void onViewCreated(View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
@@ -49,13 +49,13 @@ public class MainFragment extends Fragment {
 
     }
 
-    @Override
+    /*@Override
     public void onResume() {
         super.onResume();
         listAdapter.notifyDataSetChanged();
     }
 
-    private class LebensmittelAdapter extends BaseAdapter {
+    /*private class LebensmittelAdapter extends BaseAdapter {
 
         private List<Lebensmittel> lebensmittel;
 
