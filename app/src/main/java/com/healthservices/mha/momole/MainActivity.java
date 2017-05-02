@@ -19,9 +19,10 @@ import android.support.annotation.RequiresApi;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ListView;
-import android.widget.TextView;
+
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.TextView;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
