@@ -13,9 +13,12 @@ import android.widget.TextView;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
-
-import eu.englich.payments.database.PaymentDAO;
-import eu.englich.payments.database.model.Payment;
+import com.healthservices.mha.momole.database.model.Beschwerden;
+import com.healthservices.mha.momole.database.model.Lebensmittel;
+import com.healthservices.mha.momole.database.model.Notizen;
+import com.healthservices.mha.momole.database.BeschwerdenDAO;
+import com.healthservices.mha.momole.database.LebensmittelDAO;
+import com.healthservices.mha.momole.database.NotizenDAO;
 
 /**
  * Created by Christoph Englich on 19.03.17.
