@@ -128,7 +128,3 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         return true;
     }
 }
-
-    /**
-     * Created by Christoph Englich on 19.03.17.
-     */
