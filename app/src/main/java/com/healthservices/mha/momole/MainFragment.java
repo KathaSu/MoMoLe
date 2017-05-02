@@ -23,7 +23,7 @@ import com.healthservices.mha.momole.database.NotizenDAO;
 
 public class MainFragment extends Fragment {
 
-    //private ListView listView;
+    private ListView listView;
     //private PaymentAdapter listAdapter;
     //private SimpleDateFormat dateFormat = new SimpleDateFormat("dd.MM.yyyy HH:mm:ss");
 
