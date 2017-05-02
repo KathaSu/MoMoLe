@@ -68,16 +68,6 @@ public class MainFragment extends Fragment {
         }
     }
 
-        /*@Override
-        public Payment getItem(int position) {
-            return payments.get(position);
-        }
-
-        @Override
-        public long getItemId(int position) {
-            return payments.get(position).getId();
-        }
-
         @Override
         public View getView(int position, View convertView, ViewGroup parent) {
             LayoutInflater layoutInflater = (LayoutInflater) getContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
@@ -100,7 +90,7 @@ public class MainFragment extends Fragment {
 
         @Override
         public void notifyDataSetChanged() {
-            payments = PaymentDAO.getInstance(getContext()).getAllPayments();
+            lebensmittel = LebensmittelDAO.getInstance(getContext()).getAllLebensmittel();
             super.notifyDataSetChanged();
         }
 
