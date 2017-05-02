@@ -59,25 +59,30 @@ public class MainFragment extends Fragment {
         //listAdapter.notifyDataSetChanged();
     }
 
-    /*private class PaymentAdapter extends BaseAdapter {
+    private class MomoleAdapter extends BaseAdapter {
 
-        private List<Payment> payments;
+        private List<Lebensmittel> momole;
 
-        private PaymentAdapter() {
-            payments = PaymentDAO.getInstance(getContext()).getAllPayments();
+        private MomoleAdapter() {
+            Lebensmittel = LebensmittelDAO.getInstance(getContext()).getAllLebensmittel();
+            Beschwerden = BeschwerdenDAO.getInstance(getContext()).getAllBeschwerden();
+            Notizen = NotizenDAO.getInstance(getContext()).getAllNotizen();
         }
 
         @Override
-        public int getCount() {
-            return payments.size();
+        public Lebensmittel getItem(int position) {
+            return Lebensmittel.get(position);
+        }
+        @Override
+        public Beschwerden getItem(int position) {
+            return Beschwerden.get(position);
+        }
+        @Override
+        public Notizen getItem(int position) {
+            return Notizen.get(position);
         }
 
-        @Override
-        public Payment getItem(int position) {
-            return payments.get(position);
-        }
-
-        @Override
+       /* @Override
         public long getItemId(int position) {
             return payments.get(position).getId();
         }
