@@ -3,8 +3,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="layout.fragment_content_beschwerden_bearbeiten">
-
+    tools:context="com.healthservices.mha.momole.MainActivity">
+   <!-- layout.fragment_content_beschwerden_bearbeiten stand ursprünglich hinter tools,
+    das ist aber die Datei in der wir uns befinden, und in Payments wird an dieser Stelle
+    auf eine Java Fragement Datei verwiesen (Gina)-->
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent" >
