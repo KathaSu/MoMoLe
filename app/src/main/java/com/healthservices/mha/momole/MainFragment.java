@@ -9,7 +9,6 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
-
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
@@ -36,7 +35,7 @@ public class MainFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
+        //Inflate the layout for this fragment
         return inflater.inflate(R.layout.content_main, container, false);
     }
 
@@ -53,7 +52,7 @@ public class MainFragment extends Fragment {
     @Override
     public void onResume() {
         super.onResume();
-        //listAdapter.notifyDataSetChanged();
+        listAdapter.notifyDataSetChanged();
     }
 
     private class LebensmittelAdapter extends BaseAdapter {
@@ -64,8 +63,8 @@ public class MainFragment extends Fragment {
             lebensmittel = LebensmittelDAO.getInstance(getContext()).getAllLebensmittel();
         }
     }
-
-    @Override
+}
+    /*@Override
     public View getView(int position, View convertView, ViewGroup parent) {
         LayoutInflater layoutInflater = (LayoutInflater) getContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 
@@ -94,4 +93,3 @@ public class MainFragment extends Fragment {
     private String formatDate(long timestamp) {
         return dateFormat.format(new Date(timestamp));
     }
-}
